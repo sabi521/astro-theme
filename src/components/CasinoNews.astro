@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const postData = await fetch("https://slotsstg.wpengine.com/graphql", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    query: `query CasinoNewsHome {
+  posts(where: {categoryId: 9}, first: 4) {
+    edges {
+      node {
+        link
+        title
+        excerpt
+        date
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+}`,
+  }),
+}).then((data) => data.json());
+
+const posts = postData.data.posts.edges;
+//console.log(posts);
+---
+
+<section class="casino_news max-w-[1440px] mx-auto font-giloryRegular">
+    <div class="casino_news_title">
+        <h2 class="text-[#333] pb-3 font-medium text-3xl">Casino News</h2>
+    </div>
+
+    <div class="casino_news_blocks grid grid-cols-5 gap-12">
+    <div class="casino_news_left_block col-span-3">
+      {posts.slice(0, 1).map((post: any) =>
+        <div class="left_block">
+            <article class="">
+        <a class="mb-5" href={post.node.link}>
+          <img
+            class="shadow-casinoNews"
+            width=""
+            height=""
+            alt={post.node.title}
+            title={post.node.title}
+            src={post.node.featuredImage.node.sourceUrl}
+          />
+        </a>
+
+        <h4 class="text-3xl py-3 font-giloryBold ">
+          <a href="href={post.node.link}">{post.node.title}</a>
+        </h4>
+        <p class="text-[#491957]">{post.node.date.split('T')[0]}</p>
+        <div class="text-[#2f0536]"><a href={post.node.link} set:html={post.node.excerpt}></a></div>
+      </article>
+        </div>
+  
+    )}
+      </div>
+
+      <div class="casino_news_right_block col-span-2 flex flex-col gap-4">
+        {posts.slice(1, 4).map((post: any) =>
+          <div class="right_block">
+              <article class=" flex items-center justify-between border-b pb-4">
+          <a class="block w-[40%] h-40 rounded-lg overflow-hidden" href={post.node.link}>
+            <img
+              class="w-full h-40 object-cover shadow-casinoNews"
+              width=""
+              height=""
+              alt={post.node.title}
+              title={post.node.title}
+              src={post.node.featuredImage.node.sourceUrl}
+            />
+          </a>
+           <div class="w-[55%]">
+            <h4 class="">
+              <a href="">{post.node.title}</a>
+            </h4>
+            <div class="line-clamp-3"><a href={post.node.link} set:html={post.node.excerpt}></a></div>
+        
+          </div>
+        </article>
+
+          </div>
+    
+      )}
+        </div>
+    
+    </div>
+      
+</section>

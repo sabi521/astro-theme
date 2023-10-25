@@ -1,0 +1,22 @@
+{
+  "name": "regular-rotation",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^4.0.0",
+    "@types/swiper": "^6.0.0",
+    "astro": "^2.10.15",
+    "swiper": "^11.0.1",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
