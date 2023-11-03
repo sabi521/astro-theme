@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import { wpquery } from '../data/wordpress';
 
-const postData = await fetch("https://slotsstg.wpengine.com/graphql", {
+/* const postData = await fetch("https://slotsstg.wpengine.com/graphql", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -28,23 +28,45 @@ const postData = await fetch("https://slotsstg.wpengine.com/graphql", {
   }),
 }).then((data) => data.json());
 
-const posts = postData.data.posts.edges;
+const posts = postData.data.posts.edges; */
 //console.log(posts);
+
+const data = await wpquery({
+  query: `
+  query CasinoNewsHome {
+  posts(where: {categoryId: 9}, first: 4) {
+    edges {
+      node {
+        link
+        title
+        excerpt
+        date
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+}
+  `,
+});
 ---
 
-<section class="casino_news max-w-[1440px] mx-auto font-giloryRegular">
+<section class="casino_news max-w-[1440px] mx-auto font-giloryRegular px-4 pb-16 pt-10">
     <div class="casino_news_title">
-        <h2 class="text-[#333] pb-3 font-medium text-3xl">Casino News</h2>
+        <h2 class="text-[#ff688b] pb-3 font-medium font-giloryExtrabold text-3xl">Casino News</h2>
     </div>
 
     <div class="casino_news_blocks grid grid-cols-5 gap-12">
-    <div class="casino_news_left_block col-span-3">
-      {posts.slice(0, 1).map((post: any) =>
+    <div class="casino_news_left_block col-span-5 md:col-span-3">
+      {data.posts.edges.slice(0, 1).map((post: any) =>
         <div class="left_block">
             <article class="">
         <a class="mb-5" href={post.node.link}>
           <img
-            class="shadow-casinoNews"
+            class="shadow-casinoBlock rounded-lg"
             width=""
             height=""
             alt={post.node.title}
@@ -53,19 +75,19 @@ const posts = postData.data.posts.edges;
           />
         </a>
 
-        <h4 class="text-3xl py-3 font-giloryBold ">
+        <h4 class="text-3xl py-3 font-giloryBold text-[#ff688b]">
           <a href="href={post.node.link}">{post.node.title}</a>
         </h4>
-        <p class="text-[#491957]">{post.node.date.split('T')[0]}</p>
-        <div class="text-[#2f0536]"><a href={post.node.link} set:html={post.node.excerpt}></a></div>
+        <p class="text-[#491957] py-2 before:content-[url('https://slotsparadise.com/wp-content/uploads/2022/03/Group-4377.png')] flex gap-2 before:inline-block before:h-full before:w-4 items-center">{post.node.date.split('T')[0]}</p>
+        <div class="text-[#2f0536] font-giloryRegular"><a class="font-giloryRegular" href={post.node.link} set:html={post.node.excerpt}></a></div>
       </article>
         </div>
   
     )}
       </div>
 
-      <div class="casino_news_right_block col-span-2 flex flex-col gap-4">
-        {posts.slice(1, 4).map((post: any) =>
+      <div class="casino_news_right_block col-span-5 md:col-span-2 flex flex-col gap-4">
+        {data.posts.edges.slice(1, 4).map((post: any) =>
           <div class="right_block">
               <article class=" flex items-center justify-between border-b pb-4">
           <a class="block w-[40%] h-40 rounded-lg overflow-hidden" href={post.node.link}>
@@ -79,10 +101,10 @@ const posts = postData.data.posts.edges;
             />
           </a>
            <div class="w-[55%]">
-            <h4 class="">
-              <a href="">{post.node.title}</a>
+            <h4 class="text-[#6A6C6E] font-giloryBold text-xl leading-[1.1]">
+              <a href="{post.node.link}">{post.node.title}</a>
             </h4>
-            <div class="line-clamp-3"><a href={post.node.link} set:html={post.node.excerpt}></a></div>
+            <div class="line-clamp-3 mt-2"><a class="text-[#2F0536] font-giloryRegular text-base" href={post.node.link} set:html={post.node.excerpt}></a></div>
         
           </div>
         </article>
@@ -92,6 +114,13 @@ const posts = postData.data.posts.edges;
       )}
         </div>
     
+    </div>
+
+    <div class="more-casino-news-btn text-center mt-10">
+      <a
+        class="bg-[#a64485] inline-block text-white text-lg px-12 py-2 rounded-[25px] font-giloryExtrabold font-semibold uppercase hover:bg-[#ff93aa] cursor-pointer transition-all"
+        >More News</a
+      >
     </div>
       
 </section>

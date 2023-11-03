@@ -1,3 +1,7 @@
+---
+import Navigation from "./Navigation.astro"
+---
+
 <header class="new-nav-header">
   <div class="header-section">
     <ul class="promos flex justify-center items-center py-4 border-b-[1px]">
@@ -14,17 +18,10 @@
       </li>
     </ul>
 
-    <div class="header-row flex justify-between items-center py-8 px-4">
-      <div class="flex items-center w-1/2">
-        <div id="slide-in-open" class="mr-4 sm:mr-8">
-          <div class="burger-icon cursor-pointer">
-            <span class="block h-[2px] bg-[#FD106A] rounded-[9px] w-6"></span>
-            <span class="block h-[2px] bg-[#FD106A] rounded-[9px] w-4 my-2"
-            ></span>
-            <span class="block h-[2px] bg-[#FD106A] rounded-[9px] w-6"></span>
-          </div>
-        </div>
-        <div class="logo-img">
+    <div class="header-row flex justify-between items-center py-8 ">
+      <div class="flex items-center w-1/2 px-4">
+            <Navigation />
+        <div class="logo-img relative z-50">
           <a href="http://slotsparadise.com">
             <span class="et_pb_image_wrap">
               <img
@@ -58,3 +55,5 @@
     </div>
   </div>
 </header>
+
+

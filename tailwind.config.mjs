@@ -6,7 +6,8 @@ export default {
 			boxShadow: {
 				"custom": '0 50px 25px -24px rgb(0 0 0 / 0.3)',
 				"homePosts": '0 4px 7px #0000001a',
-				"casinoNews" : '0px 2px 18px 0px rgb(0 0 0 / 30%)'
+				"casinoNews" : '0px 2px 18px 0px rgb(0 0 0 / 30%)',
+				"casinoBlock" : 'rgba(0, 0, 0, 0.3) 0px 2px 18px 0px',
 			  },
 
 			  fontFamily: {
