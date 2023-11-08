@@ -6,25 +6,22 @@ import { wpquery } from "../data/wordpress";
 
 const data = await wpquery({
   query: `
-  {
-  nodeByUri(uri: "/") {
-    __typename
-    ... on ContentType {
-      id
-      name
-    }
-    ... on Page {
-      id
-      title
-      content(format: RENDERED)
+  query GetPostsEdges {
+  posts {
+    edges {
+      node {
+        id
+        title
+        date
+      }
     }
   }
 }`,
 });
+
+//console.log(data.posts.edges);
 ---
 
-<body>
-  <div>
-    {data.nodeByUri.content}
-  </div>
-</body>
+<section class="recommended_block max-w-[1440px] mx-auto px-4 my-16">
+  
+</section>
