@@ -38,7 +38,7 @@ export async function homePagePostsQuery(){
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
           query: `{
-              posts {
+            posts(first: 100) {
                 nodes {
                   date
                   uri
@@ -152,45 +152,61 @@ export async function getNodeByURI(uri){
   return data;
 }
 
-export async function getAllUris(){
-const response = await fetch("https://slotsstg.wpengine.com/graphql", {
-    method: 'post', 
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({
-        query: `query GetAllUris {
-          terms {
-            nodes {
-              uri
-            }
-          }
-          posts(first: 100) {
-            nodes {
-              uri
-            }
-          }
-          pages(first: 100) {
-            nodes {
-              uri
-            }
-          }
-        }
-        `
-    })
-});
-const{ data } = await response.json();
-const uris = Object.values(data)
-  .reduce(function(acc, currentValue){
-    return acc.concat(currentValue.nodes)
-  }, [])
-  .filter(node => node.uri !== null)
-  .map(node => {
-    let trimmedURI = node.uri.substring(1);
-    trimmedURI = trimmedURI.substring(0, trimmedURI.length - 1)
-    return {params: {
-      uri: trimmedURI
-    }}
-  })
+export async function getAllUris() {
+  let uris = [];
 
-return uris;
+  // Initial cursor for pagination
+  let postCursor = null;
 
+  do {
+    const response = await fetch("https://slotsstg.wpengine.com/graphql", {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: `
+          query GetAllUris($postCursor: String) {
+            terms {
+              nodes {
+                uri
+              }
+            }
+            posts(first: 100, after: $postCursor) {
+              pageInfo {
+                endCursor
+                hasNextPage
+              }
+              nodes {
+                uri
+              }
+            }
+            pages(first: 100) {
+              nodes {
+                uri
+              }
+            }
+          }
+        `,
+        variables: {
+          postCursor: postCursor,
+        },
+      }),
+    });
+
+    const { data } = await response.json();
+
+    // Extract post URIs and add them to the uris array
+    const postNodes = data.posts.nodes || [];
+    uris = uris.concat(postNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
+
+    // Update the cursor for the next page
+    postCursor = data.posts.pageInfo.hasNextPage ? data.posts.pageInfo.endCursor : null;
+  } while (postCursor);
+
+  return uris;
 }
+
+// Function to trim URI
+function trimURI(uri) {
+  return uri.substring(1, uri.length - 1);
+}
+
