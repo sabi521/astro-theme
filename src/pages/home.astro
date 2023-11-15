@@ -7,6 +7,7 @@ import Promos from "../components/Promos.astro";
 import Recommend from "../components/Recommend.astro";
 import Footer from "../components/Footer.astro"
 import Reviews from "../components/Reviews.astro"
+import WhySlots from "../components/WhySlots.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -118,10 +119,13 @@ import Reviews from "../components/Reviews.astro"
     <HomePosts />
     <CasinoNews />
     <OnlineCasinoGuides />
-    <Reviews />
+    <div class="review_container flex flex-col lg:flex-row max-w-[1440px] mx-auto px-4">
+     <div class="w-full lg:w-[64%] mr-[5%]"><WhySlots /></div> 
+     <div class="w-full lg:w-[31%]"><Reviews /></div>
+    </div>
+    
     <Promos />
     <Recommend />
-    <Footer />
     
   </main>
 </Layout>

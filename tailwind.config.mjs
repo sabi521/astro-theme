@@ -16,7 +16,18 @@ export default {
 				giloryRegular: ["Gilroy-Regular"],
 				giloryBold: ["Gilroy-Bold"],
 				giloryExtrabold: ["Gilroy-ExtraBold"],
-			  }
+			  },
+
+			  backgroundSize: {
+				'100%': '100%',
+			  },
+			  // Add your custom utility classes here
+			  backgroundImage: {
+				'gradient-to-r': 'linear-gradient(171deg, #ea94a8 0%, #8f4779 100%)',
+			  },
+			  backgroundColor: {
+				'custom-pink': '#ea94a8',
+			  },
 		},
 	},
 	plugins: [],

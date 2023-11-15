@@ -1,51 +1,196 @@
-import dotenv from 'dotenv';
-dotenv.config();
-const API_URL = 'https://slotsstg.wpengine.com/graphql';
 
 
-async function fetchAPI(query, { variables } = {}) {
-    const headers = { 'Content-Type': 'application/json' };
-    const res = await fetch(API_URL, {
-      method:'Post',
-      headers,
-      body: JSON.stringify({ query, variables }),
-    });
-  
-    const json = await res.json();
-    if (json.errors) {
-      console.log(json.errors);
-      throw new Error('Failed to fetch API');
-    }
-  
-    return json.data;
-  }
+/* export async function navQuery(){
+  const siteNavQueryRes = await fetch("https://slotsstg.wpengine.com/graphql", {
+      method: 'post', 
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+          query: `{
+              menus(where: {location: PRIMARY}) {
+                nodes {
+                  name
+                  menuItems {
+                      nodes {
+                          uri
+                          url
+                          order
+                          label
+                      }
+                  }
+                }
+              }
+              generalSettings {
+                  title
+                  url
+                  description
+              }
+          }
+          `
+      })
+  });
+  const{ data } = await siteNavQueryRes.json();
+  return data;
+} */
+
+export async function homePagePostsQuery(){
+  const response = await fetch("https://slotsstg.wpengine.com/graphql", {
+      method: 'post', 
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+          query: `{
+              posts {
+                nodes {
+                  date
+                  uri
+                  title
+                  commentCount
+                  excerpt
+                  categories {
+                    nodes {
+                      name
+                      uri
+                    }
+                  }
+                  featuredImage {
+                    node {
+                      srcSet
+                      sourceUrl
+                      altText
+                      mediaDetails {
+                        height
+                        width
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          `
+      })
+  });
+  const{ data } = await response.json();
+  return data;
+}
 
 
+export async function getNodeByURI(uri){
+  const response = await fetch("https://slotsstg.wpengine.com/graphql", {
+      method: 'post', 
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+          query: `query GetNodeByURI($uri: String!) {
+            nodeByUri(uri: $uri) {
+              __typename
+              isContentNode
+              isTermNode
+              ... on Post {
+                id
+                title
+                date
+                uri
+                excerpt
+                content
+                categories {
+                  nodes {
+                    name
+                    uri
+                  }
+                }
+                featuredImage {
+                  node {
+                    srcSet
+                    sourceUrl
+                    altText
+                    mediaDetails {
+                      height
+                      width
+                    }
+                  }
+                }
+              }
+              ... on Page {
+                id
+                title
+                uri
+                date
+                content
+              }
+              ... on Category {
+                id
+                name
+                children {
+                  edges {
+                    node {
+                      posts {
+                        edges {
+                          node {
+                            title
+                            uri
+                            excerpt
+                            featuredImage {
+                              node {
+                                sourceUrl
+                                altText
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          `,
+          variables: {
+              uri: uri
+          }
+      })
+  });
+  const{ data } = await response.json();
+  return data;
+}
 
-  export async function getAllPagesWithSlugs() {
-    const data = await fetchAPI(`
-    {
-      pages(first: 10000) {
-        edges {
-          node {
-            slug
+export async function getAllUris(){
+const response = await fetch("https://slotsstg.wpengine.com/graphql", {
+    method: 'post', 
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+        query: `query GetAllUris {
+          terms {
+            nodes {
+              uri
+            }
+          }
+          posts(first: 100) {
+            nodes {
+              uri
+            }
+          }
+          pages(first: 100) {
+            nodes {
+              uri
+            }
           }
         }
-      }
-    }
-    `);
-    return data?.pages;
-  }
+        `
+    })
+});
+const{ data } = await response.json();
+const uris = Object.values(data)
+  .reduce(function(acc, currentValue){
+    return acc.concat(currentValue.nodes)
+  }, [])
+  .filter(node => node.uri !== null)
+  .map(node => {
+    let trimmedURI = node.uri.substring(1);
+    trimmedURI = trimmedURI.substring(0, trimmedURI.length - 1)
+    return {params: {
+      uri: trimmedURI
+    }}
+  })
 
+return uris;
 
-  export async function getPageBySlug(slug) {
-    const data = await fetchAPI(`
-    {
-      page(id: "${slug}", idType: URI) {
-        title
-        content
-      }
-    }
-    `);
-    return data?.page;
-  }
+}
