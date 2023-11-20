@@ -1,5 +1,3 @@
-
-
 /* export async function navQuery(){
   const siteNavQueryRes = await fetch("https://slotsstg.wpengine.com/graphql", {
       method: 'post', 
@@ -32,7 +30,7 @@
   return data;
 } */
 
-export async function homePagePostsQuery(){
+/* export async function homePagePostsQuery(){
   const response = await fetch("https://slotsstg.wpengine.com/graphql", {
       method: 'post', 
       headers: {'Content-Type':'application/json'},
@@ -70,7 +68,7 @@ export async function homePagePostsQuery(){
   });
   const{ data } = await response.json();
   return data;
-}
+} */
 
 
 export async function getNodeByURI(uri){
@@ -88,6 +86,7 @@ export async function getNodeByURI(uri){
                 title
                 date
                 uri
+                slug
                 excerpt
                 content
                 categories {
@@ -112,15 +111,18 @@ export async function getNodeByURI(uri){
                 id
                 title
                 uri
+                slug
                 date
                 content
               }
               ... on Category {
                 id
                 name
+                slug
                 children {
                   edges {
                     node {
+                      name
                       posts {
                         edges {
                           node {
@@ -184,6 +186,12 @@ export async function getAllUris() {
                 uri
               }
             }
+            categories(first: 1000) {
+              nodes {
+                uri
+                slug
+              }
+            }
           }
         `,
         variables: {
@@ -197,6 +205,10 @@ export async function getAllUris() {
     // Extract post URIs and add them to the uris array
     const postNodes = data.posts.nodes || [];
     uris = uris.concat(postNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
+
+    // Extract category URIs and add them to the uris array
+    const categoryNodes = data.categories.nodes || [];
+    uris = uris.concat(categoryNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
 
     // Update the cursor for the next page
     postCursor = data.posts.pageInfo.hasNextPage ? data.posts.pageInfo.endCursor : null;

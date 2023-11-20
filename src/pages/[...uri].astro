@@ -4,10 +4,25 @@ import Layout from "../layouts/Layout.astro";
 
 import Archive from "../components/templates/Archive.astro";
 import Single from "../components/templates/Single.astro";
+import SingleNewsArticle from "../components/templates/SingleNewsArticle.astro";
+import SingleGamePage from "../components/templates/SingleGamePage.astro";
+import NewsArchiveCategory from "../components/templates/NewsArchiveCategory.astro";
 import { getNodeByURI, getAllUris } from "../lib/api";
 const uri = `/${Astro.params.uri}/`;
 const data = await getNodeByURI(uri);
 const node = data.nodeByUri;
+
+// Access the slug value if it exists in the node
+//const slug = node.slug || null; // Replace null with a default value if needed
+
+// Now you have both uri and slug available
+console.log("URI:", uri);
+//console.log("Slug:", slug);
+
+//console.log(node.__typename);
+
+//console.log(slug);
+
 
 export async function getStaticPaths(){
     return await getAllUris();
@@ -17,14 +32,29 @@ function resolveContentTemplate(node){
     let template;
     switch(node.__typename){
         case 'Post':
-            template = Single;
+            // Check if the uri includes the word "news"
+            if (uri.includes('news')) {
+                template = SingleNewsArticle;
+            }
+            else {
+                template = SingleGamePage;
+            }
             break; 
+
+        case 'Category':
+
+            if (uri.includes('news')) {
+                template = NewsArchiveCategory;
+            }
+            else {
+                template = Archive;
+            }
+            break; 
+            
         case 'Page':
             template = Single;
             break; 
-        case 'Category':
-            template = Archive;
-            break; 
+        
         case 'Tag':
             template = Archive;
             break; 

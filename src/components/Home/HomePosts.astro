@@ -1,5 +1,6 @@
 ---
-import { wpquery } from '../data/wordpress';
+import { wpquery } from '../../data/wordpress';
+import { Image } from "astro:assets";
 
 const data = await wpquery({
   query: `
@@ -39,8 +40,8 @@ const data = await wpquery({
     <!-- Slides -->
       <article class="home-slider-article swiper-slide rounded-[3px] bg-white shadow-homePosts overflow-hidden h-[283px]">
         <a class="entry-featured-image-url mb-5" href={post.node.link}>
-          <img
-            class="games-img reco w-full h-[228px]"
+          <Image
+            class="games-Image reco w-full h-[228px]"
             width="328"
             height="223"
             alt={post.node.title}
@@ -66,7 +67,7 @@ const data = await wpquery({
 
 
 
-<script src="../scripts/local.js"></script>
+<script src="../../scripts/local.js"></script>
 
 
 

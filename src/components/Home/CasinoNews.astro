@@ -1,6 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { wpquery } from '../data/wordpress';
+import { Image } from "astro:assets";
+import SidebarArticles from "../SidebarArticles.astro";
+import { wpquery } from '../../data/wordpress';
 
 /* const postData = await fetch("https://slotsstg.wpengine.com/graphql", {
   method: "POST",
@@ -65,10 +66,10 @@ const data = await wpquery({
         <div class="left_block">
             <article class="">
         <a class="mb-5" href={post.node.link}>
-          <img
+          <Image
             class="shadow-casinoBlock rounded-lg"
-            width=""
-            height=""
+            width="825"
+            height="460"
             alt={post.node.title}
             title={post.node.title}
             src={post.node.featuredImage.node.sourceUrl}
@@ -79,7 +80,7 @@ const data = await wpquery({
           <a href="href={post.node.link}">{post.node.title}</a>
         </h4>
         <p class="text-[#491957] py-2 before:content-[url('https://slotsparadise.com/wp-content/uploads/2022/03/Group-4377.png')] flex gap-2 before:inline-block before:h-full before:w-4 items-center">{post.node.date.split('T')[0]}</p>
-        <div class="text-[#2f0536] font-giloryRegular"><a class="font-giloryRegular" href={post.node.link} set:html={post.node.excerpt}></a></div>
+        <div class="text-[#2f0536] font-giloryRegular font-semibold"><a class="font-giloryRegular" href={post.node.link} set:html={post.node.excerpt}></a></div>
       </article>
         </div>
   
@@ -87,31 +88,7 @@ const data = await wpquery({
       </div>
 
       <div class="casino_news_right_block col-span-5 md:col-span-2 flex flex-col gap-4">
-        {data.posts.edges.slice(1, 4).map((post: any) =>
-          <div class="right_block">
-              <article class=" flex items-center justify-between border-b pb-4">
-          <a class="block w-[40%] h-40 rounded-lg overflow-hidden" href={post.node.link}>
-            <img
-              class="w-full h-40 object-cover shadow-casinoNews"
-              width=""
-              height=""
-              alt={post.node.title}
-              title={post.node.title}
-              src={post.node.featuredImage.node.sourceUrl}
-            />
-          </a>
-           <div class="w-[55%]">
-            <h4 class="text-[#6A6C6E] font-giloryBold text-xl leading-[1.1]">
-              <a href="{post.node.link}">{post.node.title}</a>
-            </h4>
-            <div class="line-clamp-3 mt-2"><a class="text-[#2F0536] font-giloryRegular text-base" href={post.node.link} set:html={post.node.excerpt}></a></div>
-        
-          </div>
-        </article>
-
-          </div>
-    
-      )}
+        <SidebarArticles />
         </div>
     
     </div>
