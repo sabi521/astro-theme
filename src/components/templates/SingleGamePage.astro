@@ -2,6 +2,8 @@
 const { node } = Astro.props;
 import { Image } from "astro:assets";
 import SidebarArticles from "../SidebarArticles.astro";
+import SingleGameReviewSidebar from "../SingleGameReviewSidebar.astro"
+import GameInfoShortcode from "../GameInfoShortcode.astro";
 --- 
 
 
@@ -27,11 +29,17 @@ import SidebarArticles from "../SidebarArticles.astro";
                 </article>
             </div>
             <div class="sidebar col-span-6 md:col-span-2 flex flex-col gap-4">
+
+
+                <SingleGameReviewSidebar />
+                 <GameInfoShortcode />
                 <h2 class="text-[#ff688b] pb-3 font-medium font-giloryExtrabold text-3xl">Articles</h2>
                 <SidebarArticles />
                 </div>
         </div>
     </div>
+
+    
 
  
  

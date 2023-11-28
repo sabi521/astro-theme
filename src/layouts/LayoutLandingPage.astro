@@ -1,6 +1,4 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
 }
@@ -17,20 +15,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-
-    <link rel="stylesheet" href="https://slotsparadise.com/wp-content/plugins/wp-customer-reviews/css/wp-customer-reviews.css?ver=3.6.8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://slotsparadise.com/wp-content/themes/slotsparadise/style.css?ver=1699904438">
       <style>
-/* Register your custom font family and tell the browser where to find it. */
-/* @font-face {
-  font-family: 'DistantGalaxy';
-  src: url('/fonts/DistantGalaxy.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
 
 @font-face {
     font-family: 'Gilroy-Light';
@@ -77,13 +62,31 @@ const { title } = Astro.props;
    
   </head>
   <body>
-
-    <Header />
-
     <slot />
 
+    <script>
+      const termsButtons = document.querySelectorAll('.terms');
+      const popupSections = document.querySelectorAll('.popup');
+      const closeButtons = document.querySelectorAll('.close');
+  
+      termsButtons.forEach((btn, index) => {
+          btn.addEventListener('click', () => {
+              // Use the specific index to access the corresponding popupSection
+              popupSections[index].classList.remove('hidden');
+          });
+      });
+  
+      closeButtons.forEach((closeButton, index) => {
+          closeButton.addEventListener('click', () => {
+              // Use the specific index to access the corresponding popupSection
+              popupSections[index].classList.add('hidden');
+          });
+      });
+  </script>
+  
+  
+  
 
-    <Footer />
-    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> 
   </body>
+
 </html>
