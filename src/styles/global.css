@@ -1,0 +1,4003 @@
+/*
+ Theme Name:     Slots Paradise Theme
+ Theme URI:      https://www.slotsparadise.com
+ Description:    Custom SlotsParadise Theme
+ Author:         Pacific Dev
+ Author URI:     https://www.slotsparadise.com
+ Template:       Divi
+ Version:        1.0.2
+*/
+ 
+ 
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+/* Default edits */
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Light.woff');
+    font-weight: normal;
+    /* Add the font-display property */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Bold.woff');
+    font-weight: normal;
+    /* Add the font-display property */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Medium.woff');
+    font-weight: normal;
+    /* Add the font-display property */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Regular.woff');
+    font-weight: normal;
+    /* Add the font-display property */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-ExtraBold.woff');
+    font-weight: normal;
+    /* Add the font-display property */
+    font-display: swap;
+}
+
+#top-menu li {
+    padding-right: 4.5vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+}
+
+.dev-link {
+	float:right;
+	display:block;
+	font-weight: normal;
+}
+
+#footer-info {
+	float: none !important;
+}
+
+/*** Take out the divider line between content and sidebar ***/
+.home .page-template-default #main-content .container:before {background: none;}
+ 
+/*** Hide Sidebar ***/
+.home .page-template-default #sidebar {display:none;}
+ 
+/*** Expand the content area to fullwidth ***/
+
+/**************** Cutom css *****************************/
+p {
+    /*color: #2F0536;*/
+       font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif;
+	   font-weight: 600;
+	   font-size:16px;
+}
+.single-post li{
+    font-family: gilroy-light,Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+ul li, ol li{
+    font-family: gilroy-light,Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 20px;
+    
+}
+a {
+       font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif;
+}
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif !important;
+	font-weight: normal !important;
+}
+.guides-section h4.et_pb_module_header {
+    font-size: 20px !important;
+}
+.right-art h3 a{
+	color: #6A6C6E;
+	font-family: Gilroy-Bold,Helvetica,Arial,Lucida,sans-serif!important;
+	    line-height: 1.1;
+}
+li.bpress-post-link {
+    list-style: none;
+}
+.top-casino-heading h1 {
+    text-transform: capitalize;
+}
+.social-text{color:#fff;}
+.top-header li a {
+    display: block;
+    color: #FB106A;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.top-header li {float: left;}
+.top-header{list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;}
+.account-sec .et_pb_button_module_wrapper {
+    display: inline;
+}
+/* ### CUSTOM COLUMN WIDTH ### */
+
+footer .et_pb_text_inner a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+}
+footer.et-l.et-l--footer {
+    padding-top: 100px;
+    position: relative;
+}
+.post-feature-img .et_pb_title_featured_container {
+    padding-bottom: 40px;
+}
+.post-feature-img  h1.entry-title {
+    font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif;
+}
+
+#slide-in-open {
+    width: 35px !important;
+	position: absolute !important;
+}
+.post-content-module .et_pb_row.et_pb_row_0 {
+    width: 100%;
+    padding-top: 0;
+}
+
+/*** Widget *******/
+.progress {
+    margin: 20px 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 48px;
+    overflow: hidden;
+    background:#EFEFEF;
+}
+.bar {
+    position: relative;
+    float: left;
+    min-width: 1%;
+    height: 100%;
+    background: #FFA1B5;
+    background-image: linear-gradient(-45deg,rgba(255,255,255,0.125) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.125) 50%,rgba(255,255,255,0.125) 75%,transparent 75%,transparent);
+    border-radius: 0 27px 27px 0;
+	background-size: 90px 90px;
+}
+.percent {
+    position: absolute;
+    top: 26%;
+    left: 16px;
+    margin: 0;
+    font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.rating-col {
+    width: 100%;
+    margin-top: 20px;
+	color: #2F0536;
+	margin-bottom: 36px;
+}
+.rating-col p{	padding-bottom: 0;}
+.inner-page-img {
+    /*margin-top: -85px !important;*/
+	margin-top: 0 !important;
+}
+.col-first {
+    width: 31%;
+    display: inline-block;
+    margin-right: 1%;
+    background-color: #EFEFEF;
+    border-radius: 22px 0 0 22px;
+    padding: 8px;
+    text-align: center;
+	position:relative;
+}
+.col-sec {
+    width: 30%;
+    display: inline-block;
+    margin-right: 1%;
+    background-color: #EFEFEF;
+    padding: 8px;
+    text-align: center;
+}
+.col-third {
+    width: 33%;
+    display: inline-block;
+    background-color: #EFEFEF;
+    border-radius: 0 22px 22px 0;
+    padding: 8px;
+    text-align: center;
+}
+.wid-btn {
+    background: #A64485;
+    padding: 12px 30px;
+    color: #fff !important;
+    border-radius: 45px;
+    border: none;
+    box-shadow: 0px 8px 15px rgb(0 0 0 / 23%);
+    font-size: 20px;
+	font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif !important;
+	font-weight: normal !important;
+}
+.btn-margin{margin-right:15px}
+.gamevideo h2 {
+    font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif !important;
+    font-size: 32px;
+    font-weight: 600;
+}
+.game-table {
+    border: 1px solid #ccc !important;
+    border-collapse: collapse;
+    padding: 20px;
+    table-layout: fixed;
+	    width: 100%;
+}
+.gameinfo {
+    margin-top: -45px;
+}
+.game-table caption {
+    background: #46104E;
+    padding: 20px;
+    color: #fff;
+    font-size: 26px;
+	border-radius: 20px 20px 0px 0;
+	font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif !important;
+	font-weight: normal !important;
+}
+.et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls li a {
+    color: #2f0536 !important;
+}
+.game-table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.game-table td {
+    border-top: 1px px solid #eee;
+    padding: 10px 30px !important;
+    font-size: 16px;
+    color: #A64485 !important;
+    font-weight: bold;
+	background-image: linear-gradient(-45deg,rgba(255,255,255,0.125) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.125) 50%,rgba(255,255,255,0.125) 75%,transparent 75%,transparent) !important;
+    background-size: 90px 90px !important;
+	    position: relative;
+}
+.game-table td:before {
+    content: "";
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/02/Path-6191.png);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    left: 12px;
+    top: 15px;
+}
+.game-table tr:nth-child(odd) {
+    background: #FDC5D1;
+}
+.game-table tr:nth-child(even) {
+    background: #FF93AA;
+}
+.char-table {
+    padding: 20px;
+    background: #eee;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+	/*****menu ****/
+	.Menu--users ul {
+    padding-left: 0;
+}
+.Menu--users {
+    height: auto !important;
+}
+.slick-next {
+    right: -16px !important;
+}
+	.Menu--users ul .pl-name_lastname {
+       max-width: 100%!important;
+    margin: 0 0 0px!important;
+    text-align: left !important;
+    padding-left: 20px;
+    border: 2px solid #ffa3b6 !important;
+    padding-top: 20px;
+}
+.Menu--users ul .pl-username {
+    grid-area: nl!important;
+    margin-top: 45px!important;
+    padding-left: 20px;
+}
+.Menu--users ul .pl-id {
+    grid-area: nl!important;
+    margin-top: 70px!important;
+    padding-left: 20px;
+}
+.Menu--users ul li:nth-child(4) {
+    grid-area: us!important;
+	    padding-left: 20px !important;
+}
+.Menu--users ul li:nth-child(4)::before ,.Menu--users ul li:nth-child(4)::after
+{
+	display:none !Important;
+}
+	
+	.menu-mobile-hide {
+    display: none !important;
+}
+  .game-table {
+    border: 0;
+  }
+  .gamevideo {
+	margin-top: 0 !important;
+}
+
+ul#menu-footer-information li a {
+    font-size: 14px;
+}
+#menu-footer-the-beach li a {
+    font-size: 14px;
+}
+.school-section .et_pb_module{
+	margin-bottom:0;
+	margin-top: 30px;
+}
+.school-section .et_pb_column {
+	margin-bottom:0;
+}
+.the-beach-page:before {
+	background-position: top !important;
+}
+.char-table
+{
+	margin-top:0 !important;
+}
+.percent {
+    font-size: 14px; 
+}
+.progress {
+    margin: 10px 0 auto;
+    height: 34px;
+}
+.page-title {
+    padding-top: 60px;
+    text-align: center !important;
+	    margin-bottom: 10px !important;
+}
+  .game-table caption {
+    font-size: 1.3em;
+  }
+  
+  .gamevideo h2 {
+    font-size: 24px;
+}
+  
+  .game-table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .game-table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: left;
+  }
+  
+  .game-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .game-table td:last-child {
+    border-bottom: 0;
+  }
+}
+.articles {
+    width: 100%;
+    display: table;
+   /* height: 122px;*/
+	  margin-bottom: 30px;
+	  border-bottom: 2px solid #eee;
+	      padding-bottom: 12px;
+}
+.articles:last-child {
+    border-bottom: none;
+}
+
+.left-art {
+    width: 30%;
+    /*height: 121px;*/
+    display: table-cell;
+}
+.left-art img {
+    border-radius: 7px;
+	box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+.post-feature-img {
+    margin-bottom: 5px !important;
+}
+.post-feature-img .et_pb_title_container {
+    margin-bottom: 15px;
+}
+.post-bread a {
+    color: #fff !important;
+}
+.right-art {
+    width: 68%;
+    display: table-cell;
+    padding-left: 5%;
+	vertical-align:middle;
+
+}
+.header-news .published::before {
+	display: inline-block;
+    content: '\7d';
+    font-family: 'ETmodules';
+    padding: 0 5px 0 0;
+}
+.right-art.knowledgebase {
+	padding-left: 0;
+}
+.sidebar-news ul {
+	padding-left: 0;
+}
+.content-news blockquote.has-text-align-right {
+    float: right;
+    width: 50%;
+    padding: 0 0 20px 50px;
+    text-align: left;
+}
+.content-news blockquote {
+    float: left;
+    width: 50%;
+    padding: 0 50px 20px 0;
+    text-align: left;	
+    margin: 15px 0;
+}
+.right-art h3 {
+	margin-bottom: 0;
+}
+.right-art p {
+    color: #2F0536;
+	/*font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif;*/
+	font-size: 16px;
+	-webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.right-art a {
+    color: #2F0536;
+	/*font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif;*/
+}
+li.relted-games {
+    list-style: none;
+    display: inline-block;
+    margin-right: 1%;
+    width: 18%;
+}
+img.games-img {
+    display: block;
+}
+a.post-link {
+    color: #2F0536;
+    font-weight: bold;
+}
+.dtwd_related-posts h4 {
+    color: #FF93AA;
+    font-size: 36px;
+	position: relative;
+}
+article .et_post_meta_wrapper {
+    display: none;
+}
+
+
+/************ Hambergur menu ****************/
+@media (min-width: 980px) {
+.ham-menu.et_pb_menu .et_pb_menu__menu, .et_pb_fullwidth_menu .et_pb_menu__menu {
+    display: none;
+}
+
+.ham-menu.et_pb_menu .et_mobile_nav_menu, .et_pb_fullwidth_menu .et_mobile_nav_menu {
+    display: flex;
+    float: none;
+    margin: 0 6px;
+    align-items: center;
+}
+
+/*
+.login-btn:after {
+    content: "" !important;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/02/Group-2762.png);
+    background-repeat: no-repeat;
+    top: 17px;
+}	*/
+
+.dep-btn {
+    text-align: center;
+    background: #1C8FDF;
+    color: #fff !important;
+    border: 1px solid #1C8FDF;
+    padding: 15px 27px !important;
+}
+.usd-btn {
+    text-align: center;
+    padding: 15px 27px !important;
+}
+
+}
+
+/***********PDN CSS **********/
+
+.et_mobile_menu li {
+    list-style: none;
+}
+.et_pb_module.et_pb_post_nav_0.et_pb_posts_nav.nav-single {
+    display: none;
+}
+
+li.slot-prm:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/star-ico.svg);
+    background-repeat: no-repeat;
+    left: -24px;
+    top: 0;
+}
+li.slot-pay:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/02/Group-2698.png);
+    background-repeat: no-repeat;
+    left: -24px;
+    top: 0;
+}
+li.slot-beach:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/star-ico.svg);
+    background-repeat: no-repeat;
+    left: -24px;
+    top: 0;
+}
+.online-casino-title h2
+{
+    color:#51135a!important;
+}
+
+/*change Divi hamburger menu to X*/
+.mobile_nav.opened .mobile_menu_bar:before {
+    content: '\4d';
+}
+.dtwd_related-posts h4 {
+    /*font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif;*/
+}
+p.game-name{color:#2F0536;}
+.quick-title {
+    color: #ff688b	;
+    font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 26px !important;
+    font-weight: 600;
+}
+.digit {
+    color: #2F0536;
+    font-size: 13px;
+    float: right;
+    margin-top: 12px;
+    margin-right: 15px;
+}
+/*********** CSS */
+
+.casino-school-text h2 {
+    margin-bottom: 30px;
+}
+.why-slots-tabs li.et_pb_tab_active a {
+    color: #fff !important;
+}
+.why-slots-tabs .et_pb_all_tabs {
+    border-radius: 10px;
+}
+.why-slots-tabs .et_pb_tabs_controls{ 
+	background: none;
+}
+.why-slots-tabs .et_pb_tabs_controls li {
+    min-width: 330px;
+	background: #eee !important;
+}
+.why-slots-tabs .et_pb_tabs_controls li.et_pb_tab_active {
+    color: #fff;
+    background-color: #a64485 !important;
+}
+
+.why-slots-tabs ul.et_pb_tabs_controls:after {
+    border-top: none;
+}
+.why-slots-tabs .tab-pgraph {
+    max-height: 233px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-right: 10px;
+	scrollbar-width: thin;
+}
+
+
+.why-slots-tabs .tab-pgraph::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.why-slots-tabs .tab-pgraph::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: #F5F5F5;
+}
+
+.why-slots-tabs .tab-pgraph::-webkit-scrollbar-thumb
+{
+	background-color: #fff;
+}
+.casino-news-list a.more-link {
+    background: #a64485;
+    display: inline-block;
+    padding: 10px 3%;
+    border-radius: 50px;
+    margin-top: 20px;
+	text-transform: uppercase;
+	font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif!important;
+	font-weight: normal !important;
+}
+.casino-news-list a.more-link:hover {
+    background: #ff93aa;
+  
+}
+.sec-title
+{
+	position:relative;
+}
+.sec-title:after {
+    content: "";
+    width: 91px;
+    height: 15px;
+    position: absolute;
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Group-4374.png);
+    left: 0;
+    bottom: 4px;
+    background-repeat: no-repeat;
+    background-size: contain;
+	display:none;
+}
+.et_pb_text_0_tb_body h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+/********** Casino School menu *********/
+.casino-school .et_pb_menu__menu{display:block !Important}
+.casino-school .et_mobile_nav_menu {
+    display: none !important;
+}
+ul#menu-casino-school {
+    display: block !important;
+}
+.casino-school.et_pb_menu .et_pb_menu__menu>nav>ul>li {
+    position: relative;
+    display: -ms-flexbox;
+    display: block;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin: 0;
+	padding: 8px;
+}
+.casino-school .nav li ul {
+    position: relative;
+	    opacity: 1;
+}
+.gamevideo {
+    margin-top: 28%;
+	    margin-bottom: 50px;
+}
+/***********/
+.school-left-menu{}
+.school-left-menu .et_pb_toggle_title:before {
+    display: block !important;
+}
+.school-left-menu .et_pb_toggle_close {
+    background-color: transparent;
+    padding: 5px;
+}
+.school-left-menu {
+    /*padding: 30px;*/
+}
+
+.school-left-menu a {
+    color: #2F0536;
+}
+.school-left-menu .et_pb_toggle_content.clearfix {
+    padding-left: 24px;
+    margin-left: -24px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+.school-left-menu .et_pb_toggle_open {
+    padding: 5px;
+
+}
+
+.school-left-menu .et_pb_toggle_title:before {
+   content: "\f107";
+   transition: all .3s ease-in-out;
+}
+
+.school-left-menu .et_pb_toggle_open .et_pb_toggle_title:before {
+   content: "\f107";
+   transform: rotate(180deg);
+}
+
+.school-left-menu .et_pb_toggle {
+    padding-left: 50px;
+    padding-right: 20px;
+    padding-top: 20px;
+	padding-bottom: 10PX;
+    margin-bottom: 0px !important;
+}
+
+.slide-in-menu-container {
+    background-color: #FFFFFF;
+    height: 100vh;
+    position: absolute!important;
+    top: 0px;
+    bottom: auto;
+    left: -15%;
+    right: auto;
+    opacity: 0;
+}
+.et_pb_section {
+    background-color: transparent;
+}
+
+div#et-main-area {
+   /* z-index: 2;*/
+    position: relative;
+}
+
+/********** Casino menu *********/
+
+section#basepress_nav_widget-2 {
+    border: none;
+	border-radius: 10px;
+}
+.bpress-post-count {
+    background: #fd106a;
+    color: #fff;
+}
+.bpress-page-header h1 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+	font-size: 45px;
+}
+.bpress-page-header p {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+}
+a.bpress-viewall {
+    color: #fd106a !important;
+	font-weight:600;
+}
+
+
+.bpress-crumbs-wrap {
+    /*position: absolute;
+    top: 20px;*/
+    background-color: transparent !important;
+}
+.bpress-page-header h2 {
+    color: #fff !important;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+}
+.bpress-wrap h2 a {
+    font-size: 20px;
+    font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif;
+    color: #2f0536!important;
+    font-weight: 600;
+}
+.bpress-search-submit input[type="submit"] {
+    background-color: #EE98AA;
+}
+.bpress-main-header h1, .bpress-main-header h2 {
+    text-align: center;
+	color:#FD106A;
+}
+.bpress-viewall, .bpress-viewall:link, .bpress-viewall:visited {
+    color: #FD106A;
+}
+.bpress-nav-accordion ul.children {
+    background: #fff;
+}
+.bpress-nav-section span.bpress-nav-item:hover{
+background-color: #fff;
+    border-left: none;
+}
+.bpress-section-title .bpress-section-icon {
+    color: #2f0536;
+    font-size: 20px;
+}
+.bpress-post-link:hover {
+    background-color: #f2f2f2;
+    border-left: none;
+    border-radius: 0;
+    color: #fff;
+}
+.page-title h1 {
+    color: #fff;
+    /*font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif;*/
+    font-weight: 700;
+    font-size: 32px;
+}
+/********** Casino guides *********/
+
+/********** Casino left menu *********/
+.slot-left-menu{
+	
+}
+.et_pb_menu .et_pb_menu__menu, .et_pb_menu .et_pb_menu__menu>nav, .et_pb_menu .et_pb_menu__menu>nav>ul {
+    display: block;
+    text-align: center;
+}
+.slot-left-menu ul#menu-main-menu {
+    display: block !important;
+}
+.slot-left-menu .et_pb_menu__menu>nav>ul>li{
+	/*display: block !important*/
+	padding-left: 23%;
+	margin-top: 20px;
+}
+.slot-left-menu .et_pb_menu__wrap {
+    display: block !important; 
+}
+.slot-left-menu.et_pb_menu_0_tb_header.et_pb_menu ul li a {
+    font-family: 'Gilroy-Medium',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif;
+    font-size: 22px;
+	padding-bottom:8px;
+}
+/*
+.slot-left-menu.et_pb_menu_0_tb_header.et_pb_menu ul li:nth-child(odd) a {
+    color: #fd106a!important;
+}
+.slot-left-menu.et_pb_menu_0_tb_header.et_pb_menu ul li:nth-child(even) a{
+    color: #a64485!important;
+}*/
+.slot-left-menu.et_pb_menu_0_tb_header.et_pb_menu ul li a{
+    color: #a64485!important;
+}
+.slot-left-menu .et_pb_menu__menu>nav>ul>li a:before{
+	 content: " ";
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -30px;
+    top: -4px;
+}
+li#menu-item-1461 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/promotions-ico.svg)
+}
+li#menu-item-480 a:before {
+    
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/new-game-ico.svg)
+}
+li#menu-item-481 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/slots-ico.svg)
+}
+li#menu-item-483 a:before {
+    
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/table-games-ico.svg)
+}
+li#menu-item-478 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/all-games-ico-purple.svg)
+}
+li#menu-item-1462 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/popular-ico-purple.svg)
+}
+li#menu-item-482 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/blackjack-ico-purple.svg)
+}
+li#menu-item-486 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/jackpots-ico-purple.svg)
+}
+li#menu-item-1463 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/live-dealer-ico-purple.svg)
+}
+li#menu-item-1464 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/poker-ico-purple.svg)
+}
+li#menu-item-487 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/other-ico-purple.svg)
+}
+li#menu-item-1465 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/about-us-ico-purple.svg)
+}
+li#menu-item-1466 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/wallet-ico-purple.svg)
+}
+li#menu-item-1467 a:before {
+   
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/contact-us-ico-purple.svg)
+}
+.slot-left-menu .et_mobile_nav_menu {
+    display: none;
+}
+li.relted-games img {
+    border-radius: 8px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+.et_pb_text_inner a {
+    color: #2F0536;
+}
+.promo-slides .et_pb_slide {padding-left: 0;padding-right: 0;}
+
+.promo-slides .et_pb_slide_description {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+	padding-bottom: 0 !important;
+	/*background-image: url(https://slotsparadise.com/wp-content/uploads/2022/02/Rectangle-2795.png);*/
+	text-shadow: none;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(to right bottom, #feb481, #ffa37d, #fd927c, #fa817f, #f47185, #e66485, #d85784, #c84c84, #b13f7a, #9b3370, #852765, #6f1c5a);	
+}
+.promo-slides {
+    border-radius: 10px;
+}
+.promo-slides .et_pb_slide_content {
+    background: #eee;
+    color: #51135A!important;
+	padding-top: 2%;
+    padding-bottom: 6%;
+	    margin-top: 6%;
+}
+.promo-slides h3 {
+    font-size: 34px;
+    color: #51135A!important;
+}
+.slide-btn-detail {
+    color: #ffffff!important;
+    border-width: 0px!important;
+    border-radius: 25px;
+    font-size: 19px;
+    font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif!important;
+	font-weight: normal !important;
+    text-transform: uppercase!important;
+    background-color: #51135a;
+    padding: 0.8% 5%;
+    display: inline-block;
+	margin-right:20px;
+}
+.slide-btn-detail:hover {
+	    background-color: #ffa3b6;
+
+}
+.slide-btn-more:hover {
+	    background-color: #ffa3b6;
+
+}
+.slide-btn-more {
+    color: #ffffff!important;
+    border-width: 0px!important;
+    border-radius: 25px;
+    font-size: 19px;
+    font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif!important;
+	font-weight: normal !important;
+    text-transform: uppercase!important;
+    background-color: #A64485;
+	padding: 0.8% 5%;
+    display: inline-block;
+}
+
+.promo-slides .et-pb-slider-arrows .et-pb-arrow-prev:before { 
+   font-size: 30px; 
+   content: "";
+   background-image:url(https://slotsparadise.com/wp-content/uploads/2022/03/Group-3533.png);
+   height: 32px;
+    width: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+   }
+   .promos li{list-style:none;color:#fb106a!important}
+ .promos li {
+    list-style: none;
+    color: #fb106a!important;
+    display: flex;
+    justify-content: center;
+   /* margin-right: 2%;*/
+    position: relative;
+    font-size: 20px;
+   /*font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif!important;*/
+       font-family: 'Gilroy-Regular'!important;
+	font-weight: normal !important;
+}
+  .promos li a {
+    color: #FD106A !important;
+	    font-family: Gilroy-Medium;
+  }
+  li.slot-pay {
+    margin-left: 24px !important;
+}
+li.slot-beach {
+    margin-left: 24px !important;
+}
+  ul.promos {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+ .promo-slides .et-pb-slider-arrows .et-pb-arrow-next:before {    font-size: 30px;    content: "";
+ 
+  
+   height: 32px;
+    width: 32px;
+	 background-image:url(https://slotsparadise.com/wp-content/uploads/2022/03/Group-2619.png);
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-repeat: no-repeat;
+
+ }
+ .img-related {
+    display: inline-block;
+    /*max-height: 162px;*/
+    overflow: hidden;
+}
+ul.games-reco {
+    display: flex;
+}
+ul.games-oth {
+    display: flex;
+}
+#slide-in-open{
+font-size: 15px;
+    line-height: 0em;
+    background-color: RGBA(255,255,255,0);
+    position: absolute;
+    width: 36px;
+    display: block;
+    left: -8%;
+    bottom: 26%;
+}
+.bpress-heading a {
+    color:#2F0536 !important;
+	font-weight:600 !important;
+}
+.bpress-nav-accordion .bpress-nav-item-title {
+    font-weight: 600;
+}
+.bpress-post-link .bpress-heading {
+	font-size: 1em;
+}
+.dep-btn:hover {
+    background: #fb106a !important;
+}
+.usd-btn:hover {
+    background: none !important;
+    border: 1px solid #fb106a !important;
+	color:#fb106a !important;
+}	
+.usd-btn {
+	color:#1c8fdf;
+}	
+
+
+
+
+/********** Casino guides *********/
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+	
+	.promos li {
+    font-size:12px !important;
+	}
+.dep-btn
+    {
+        display: none !important;
+        font-size: 14px;
+        padding: 10px !important;
+    }
+.usd-btn {
+    font-size: 14px;
+    border: 1px solid #1c8fdf !important;
+    padding: 10px !important;
+}
+.usd-btn:active, .usd-btn:hover, .usd-btn:focus, .usd-btn:visited{
+	/*border:none !important;*/
+}
+.usd-btn:after {
+    content: '';
+    background-image: url(/content/img/design/icons/female.svg);
+    background-size: 100%;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.Menu--users {
+   min-width: 100% !important;
+}
+#main-content .school-section {
+    background-color: transparent !important;
+    box-shadow: none !important;
+	padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.school-accord-section {
+    width: 90%;
+}
+.school-section {
+    width: 90%;
+}
+.school-accord-section
+{
+		padding-top: 0;
+		 margin-top: 0;
+
+}
+	li.slot-prm:before {
+    content: "";
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/02/Path-3759.png);
+    background-repeat: no-repeat;
+    left: -21px;
+    top: 5px;
+    background-size: contain;
+}
+li.slot-pay:before
+{
+	    left: -21px;
+    top: 5px;
+    background-size: contain;
+	 height: 14px;
+    width: 14px;
+}
+li.slot-beach:before {
+    height: 15PX;
+    width: 15PX;
+    left: -21px;
+    top: 5px;
+    background-size: contain;
+}
+.header-row{text-align:center;}
+#slide-in-open {
+    margin-left: 12px !important;
+	width: 26px!important;
+}
+.wid-btn {
+    padding: 12px 22px;
+    font-size: 16px;
+}
+.dtwd_related-posts h4 {
+    font-size: 30px;
+	position: relative;
+}
+
+
+.logo-img{margin-left: 30px !important;}
+.header-row .et_pb_column {
+    width: 48% !important;
+	margin-bottom: 0;
+}
+.header-row {
+    padding-top: 10px;
+	height: 60px !important;
+}
+.header-section
+{
+	padding-bottom: 5px !important;
+}
+.slide-btn-more {
+    font-size: 14px;
+}
+.slot-left-menu li a {
+    font-size: 14px !important;
+}
+.header-background {
+    height: 222px !important;
+}
+.slide-btn-detail { 
+    font-size: 14px;
+}
+li.relted-games {
+    margin-right: 0;
+    width: 100%;
+	margin-bottom: 20px;
+}
+ul.games-reco {
+    flex-direction: column;
+	padding-left: 0;
+}
+ul.games-oth {
+    flex-direction: column;
+	padding-left: 0;
+}
+.footer-col-menu .et_mobile_nav_menu {
+    display: none;
+}
+.footer-col-menu .et_pb_menu__wrap {
+    display: inline;
+}
+.why-slots-tabs .tab-pgraph {
+    font-size: 14px;
+}
+.bpress-page-header p {
+    font-size: 20px;
+}
+.bpress-page-header h1, .bpress-page-header h2 {
+    font-size: 24px !important;
+}
+footer .et_pb_text_inner h4{
+	font-size:22px !important;	
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+    width: 48% !important;
+}
+.footer-col-1 .et_pb_text_inner h4, .footer-col-2 .et_pb_text_inner h4, .footer-col-3 .et_pb_text_inner h4, .footer-col-4 .et_pb_text_inner h4, .footer-col-5 .et_pb_text_inner h4{
+	font-size:26px;
+}
+footer #menu-games a{
+	font-size:14px;
+}
+.casino-school-text {
+    display: none;
+}
+.page-title h1 {
+    font-size: 18px;
+}
+}
+
+@media screen and (max-width: 768px) {
+	.Menu--users ul {
+    padding-left: 0;
+}
+	.Menu--users ul .pl-name_lastname {
+       max-width: 100%!important;
+    margin: 0 0 0px!important;
+    text-align: left !important;
+    padding-left: 20px;
+    border: 2px solid #ffa3b6 !important;
+    padding-top: 20px;
+}
+.Menu--users ul .pl-username {
+    grid-area: nl!important;
+    margin-top: 45px!important;
+    padding-left: 20px;
+}
+.Menu--users ul .pl-id {
+    grid-area: nl!important;
+    margin-top: 70px!important;
+    padding-left: 20px;
+}
+.Menu--users ul li:nth-child(4) {
+    grid-area: us!important;
+	    padding-left: 20px !important;
+}
+.Menu--users ul li:nth-child(4)::before ,.Menu--users ul li:nth-child(4)::after
+{
+	display:none !Important;
+}
+	
+	.menu-mobile-hide {
+    display: none !important;
+}
+/*
+.dep-btn{display: none !important;}	
+.usd-btn {
+    font-size: 18px;
+    padding-right: 1em !important;
+	border:none !important;
+}
+.usd-btn:active, .usd-btn:hover, .usd-btn:focus, .usd-btn:visited{
+	border:none !important;
+}*/
+.usd-btn:after {
+    content: '';
+    background-image: url(/content/img/design/icons/female.svg);
+    background-size: 100%;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.Menu--users {
+   min-width: 100% !important;
+}
+}
+
+
+
+@media screen and (max-width: 980px) {
+	#slide-in-open {
+    margin-left: 12px !important;
+	width: 26px!important;
+}
+.games-content, .dtwd_related-posts, .inner-page-img, .gameinfo {
+    padding: 0 20px;
+}
+.char-table {margin-top: 14% !important;margin-left: 20px;
+    margin-right: 20px;}
+.logo-img {
+    margin-left: 30px !important;
+}
+.header-row .et_pb_column {
+    width: 48% !important;
+    margin-bottom: 0;
+}
+.footer-col-menu .et_mobile_nav_menu {
+    display: none;
+}
+.footer-col-menu .et_pb_menu__wrap {
+    display: inline;
+}
+.inner-page-img {
+    position: relative !important;
+    top: 0 !important;
+}
+	
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	#myModal
+	{
+		display:none !important;
+	}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.footer-div h4 {
+    font-size: 22px !important;
+	white-space: nowrap;
+}
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	
+	.footer-div h4 {
+		font-size: 28px !important;
+	}
+}
+
+footer .subs {
+    overflow: hidden;
+    height: 255px;
+    margin: 0 -50px;
+	text-align: center;
+}
+
+footer .subs iframe {
+	width: 380px;
+    height: 290px;
+    padding: 0;
+    overflow: hidden;
+    margin: -30px 0 -60px 0;
+}
+
+.page-id-286 .et_pb_tabs_controls li a {
+	line-height: 18px;
+    font-weight: 600;
+	padding: 0;
+}
+
+.page-id-286 .et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls li {
+    height: unset !important;
+    text-align: center;
+	padding: 15px;
+}
+.post.type-post .published:before {
+    content: "";
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Group-4377.png);
+    height: 18px;
+    width: 18px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.post.type-post .published {
+    position: relative;
+    padding-left: 20px;
+    color: #491957;
+}
+
+.page-nav ul.children {
+    background: #fff;
+    padding: 10px;
+}
+.page-nav li.page_item:before {
+    content: "";
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Path-6732.png);
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    left: -15px; 
+}
+.page-nav li.page_item {
+    list-style: none;
+    padding: 8px 0px;
+    padding-left: 18px;
+	    position: relative;
+}/*
+.page-nav span.arrrow-icon {
+    font-size: 24px;
+    right: -4px;
+    color: #2f0536;
+    font-family: FontAwesome!important;
+    font-weight: 900!important;
+    content: "\f107"!important;
+	position: absolute;
+    right: 0;
+    top: 0;
+}*/
+
+/*
+.page-nav span.arrrow-icon {
+    font-size: 24px;
+    color: #2f0536;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Path-6482.png);
+    background-repeat: no-repeat;
+    height: 13px;
+    width: 13px;
+}*/
+.page-nav span.arrrow-icon:hover {
+    cursor: pointer;
+}
+.page-nav span.arrrow-icon {
+    font-size: 24px;
+    color: #2f0536;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Path-6482.png);
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 10px;
+    background-position: top right;
+}
+ul.children li.page_item:before {
+    display: none;
+}
+.page_item_has_children{}
+.nav-open .arrrow-icon {
+   /* transform: rotate(180deg);
+       transform: rotate(450deg);*/
+	transform: rotate(360deg);
+    height: 32px !important;   
+}
+.header-section
+{
+	z-index:2;
+}
+header .et_builder_inner_content {
+    z-index: unset;
+}
+div#et-main-area {
+    z-index: 1 !important;
+}
+.post-feature-img img {
+    border-radius: 8px;
+    box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+.casino-news-list .entry-featured-image-url img{
+    border-radius: 8px;
+    box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+.casino-news-home .entry-featured-image-url img{
+    border-radius: 8px;
+    box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+	background: transparent !important;
+}
+.school-section {
+    background-color: transparent !important;
+    box-shadow: none;
+}
+.article-title h2
+{
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+.games-content .et_pb_section {
+    padding-top: 0;
+}
+.bpress-page-header h1
+{
+	color:#fff;
+	font-size: 2em;
+	font-weight: 500;
+}
+
+/*
+.bpress-page-header {
+    position: absolute;
+    width: 100%;
+    top: -16%;
+    margin: 0;
+    left: 0;
+    background: none;
+}
+.archive.tax-knowledgebase_cat .bpress-page-header {
+ 
+    top: -40%;
+  
+}*/
+
+.bpress-page-header {
+	background-image: url(https://slotsparadise.com/wp-content/uploads/2022/07/thebeach-guides.jpg)!important;
+	margin-top: 0;
+	background-repeat:no-repeat;
+	padding-top:25px;
+	margin-bottom: 45px;
+}
+.bpress-page-header .bpress-content-wrap{
+    padding-bottom: 50px;
+}
+
+div.wpcr3_review blockquote.wpcr3_content p {
+    font-size: 14px;
+    line-height: 20px !important;
+    display: inline-block !important;
+	font-weight:600;
+}
+div.wpcr3_review blockquote.wpcr3_content {
+    padding: 0 0 0 10px;
+    border-left: 2px solid #ff93aa;
+    font-size: 12px !important;
+    margin: 10px 0 10px 0;
+}
+.wpcr3_pagination .wpcr3_a.wpcr3_current, .wpcr3_pagination .wpcr3_a:hover {
+    background: #ff93aa;
+}
+.wpcr3_pagination .wpcr3_a {
+    background: #ddd;
+}
+div.wpcr3_dotline, div.wpcr3_review div.wpcr3_dotline, div.wpcr3_item_name {
+    display: none !important;
+}
+div.wpcr3_aggregateRating {
+    margin-bottom: 5px;
+}
+div.wpcr3_review {
+	position:relative;
+}
+.wpcr3_review_ratingValue {
+    background: #eee;
+    border-radius: 10px;
+    line-height: 34px !important;
+    height: 30px;
+    top: 0px;
+    margin-right: 0;
+    padding: 0 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.wpcr3_review_datePublished {
+	position: absolute;
+	top: 0;
+	left: 33%;
+	line-height: 34px !important;
+	font-style: normal !important;
+	font-weight: 600;
+}
+
+.wpcr3_review_author {
+	font-style: normal !important;
+    font-weight: 600;
+}
+header .header-background {
+    z-index: 0;
+	margin-bottom: 75px;
+}
+.char-table {
+    margin-top: 28%;
+}
+.schema-faq-section {
+    margin-bottom: 20px;
+}
+ .promos li{list-style:none;color:#ff688b !important;}
+ .promos li {
+    list-style: none;
+    color: #ff688b !important;
+    display: flex;
+    justify-content: center;
+    margin-right: 2%;
+    position: relative;
+    font-size: 20px;
+}
+.promos li a {
+    color: #FD106A !important;
+	font-weight:500;
+	    backface-visibility: hidden;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    transition: 0.5s ease;
+}
+.logo-img img{
+	  backface-visibility: hidden;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    transition: 0.5s ease;
+}  
+ul.promos {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+.the-beach-page:before {
+    content: "";
+    background: #ffffff;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+	background-position: center;
+}
+.the-beach-page {
+    padding: 20px 0 !important;
+}
+.slide-in-menu-container {
+    display: none;
+}
+.slide-in-menu-container.slide-in-menu {
+    display: block ;
+}
+.beach-img-col img {
+    border-radius: 20px 20px 0 0;
+}
+.header-section {
+    padding: 5px 0 !important;
+}
+.bpress-wrap * {
+    list-style: revert;
+}
+footer.et-l.et-l--footer {
+    
+    /*z-index: -1;*/
+}
+@media (min-width: 768px){
+	
+.the-beach-page:before {
+    background: url(https://slotsparadise.com/the-beach/images/2023/03/jp-background.webp);
+	}
+	
+footer.et-l.et-l--footer {
+   /*padding-top:260px*/
+}
+h1{
+	font-size:32px!important;}
+
+h2
+{
+	font-size:26px!important;
+}
+h3
+{
+	font-size:22px!important;
+}
+h4
+{
+	font-size:18px!important;
+}
+h5
+{
+	font-size:16px!important;
+}
+h6
+{
+	font-size:14px!important;
+}
+}
+
+.guides-section h4.et_pb_module_header {
+	margin-bottom: 0;
+}
+
+#page-container div.et_pb_button_module_wrapper > a.et_pb_button, #page-container div.et_pb_button_wrapper > a.et_pb_button {
+	font-weight: normal !important;
+}
+#left-area{
+	position:relative;
+	    z-index: 1;
+}
+#main-content {
+    background-color: transparent;
+}
+
+
+/***************header*/
+.Menu--users {
+    right: 0;
+    position: absolute;
+    border: 1px solid #efefef;
+    background-color: #fff;
+    z-index: 1000;
+    display: none;
+    min-width: 252px;
+	width:252px !important;
+    overflow: visible !important;
+}
+ .Menu--users ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'nl us'
+        'nl id'
+        'bl bl'
+        'p p'
+        'w w'
+        'd d'
+        'wi wi'
+        'm m'
+        'h h'
+        'pr pr'
+        'cp cp'
+        's s';
+}
+.Menu--users ul .pl-name_lastname {
+    grid-area: nl;
+    max-width: 100px;
+    background: #fff;
+    color: #ffa3b6;
+    font-weight: 600;
+    margin: 20px 10px 20px 15px;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+}
+.Menu--users ul .pl-username {
+    grid-area: us;
+    margin-top: 20px;
+    border: none;
+    color: #A64485;
+    text-transform: uppercase;
+}
+ .Menu--users ul .pl-id {
+    grid-area: id;
+    margin-bottom: 20px;
+    border: none;
+    margin-top: 0px;
+    color: #A64485;
+}
+ .Menu--users ul li:nth-child(4) {
+    grid-area: bl;
+    background-color: #A64485;
+    color: #fff;
+    padding: 15px 0;
+    position: relative;
+    overflow: visible;
+}
+
+ .Menu--users ul .pl-profile {
+    grid-area: p;
+}
+.Menu--users ul .pl-deposit {
+    grid-area: d;
+}
+ .Menu--users ul .pl-history {
+    grid-area: h;
+}
+ .Menu--users ul .pl-messages {
+    grid-area: m;
+}
+ .Menu--users ul .pl-wallet {
+    grid-area: w;
+}
+.Menu--users ul .change_pass {
+    grid-area: cp;
+}
+.Menu--users ul .pl-promotions {
+    grid-area: pr;
+}
+.Menu--users ul .pl-withdraw {
+    grid-area: wi;
+}
+.Menu--users ul li:last-child {
+    border-bottom: 0;
+}
+.Menu--users ul .sign_out {
+    grid-area: s;
+}
+.Menu--users ul li {
+    list-style: none;
+	text-align:left;
+}
+.Menu--users ul li:nth-child(4) {
+    grid-area: bl;
+    background-color: #A64485;
+    color: #fff;
+    padding: 15px 0;
+    position: relative;
+    overflow: visible;
+}
+.Menu--users ul li:nth-child(4)::before {
+    content: " ";
+    display: block;
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 100%;
+    margin: 0 0px 0 0px !important;
+    top: 0;
+    float: left;
+    background: #A64485;
+    position: absolute;
+    left: -23px;
+    z-index: 6;
+}
+.Menu--users ul li:nth-child(4)::after {
+    z-index: 23223;
+    content: " ";
+    display: block;
+    background-image: url(https://slotsparadise.com/content/img/design/icons/angle.png);
+    background-repeat: round;
+    width: 23px;
+    height: 20px;
+    margin: 0 0px 0 0px !important;
+    top: 100%;
+    float: left;
+    position: absolute;
+    left: -23px;
+}
+.Menu--users ul li a {
+    display: flex;
+    padding: 6px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #989494;
+}
+
+.la, .las {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+	    padding-right: 10px;
+    margin-top: 5px;
+}
+a#usd-btn {
+    padding-right: 0.7em !important;
+}
+
+/******************Updated footer ***********************/
+footer .et_builder_inner_content.et_pb_gutters3 {
+    background: #3C0845;
+}
+.sp-ft-section-logos
+{
+	display: flex !important;
+    padding: 0 15px;
+	align-items: center;
+	align-items: center;
+    overflow-x: scroll;
+}
+.sp-ft-logos-row{}
+
+.sp-ft-section-logos .et_pb_image 
+{
+	margin-bottom: 0 !important;
+    min-width: 120px;
+    max-width: 160px;
+    max-height: 65px;
+	padding-right: 20px;
+	text-align: center;
+}
+.sp-ft-section-logos::-webkit-scrollbar {
+    display: none;
+    /* background: #00000061; */
+    /* width: 8px; */
+    /* height: 4px; */
+}
+.sp-ft-section-logos {
+    scrollbar-width: none;
+}
+
+div#promo-ft-link {
+    position: fixed;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition: bottom .5s;
+    z-index: 999;
+}
+.ft-row-div-menu{
+	z-index:0 !important;
+}
+.sp-footer-text p{
+	font-family: 'Gilroy-Regular',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 14px;
+}
+
+/* Logos scroller */
+.sp-ft-logos-row .slide-stuff
+{
+	/*height: 70px;*/
+}
+.sp-ft-logos-row .slick-slide {
+    height: auto !important;
+}
+.sp-ft-logos-row .et_pb_module.et_pb_image {
+    margin-bottom: 0 !important;
+}	
+.sp-ft-logos-row {
+    padding-bottom: 0 !important;
+}
+.sp-ft-logos-row .slick-track {
+    display: flex;
+    align-items: center;
+     height: 95px; 
+}
+.sp-ft-logos-row .slick-slide {
+    margin: 0 25px;
+}
+.sp-ft-logos-row .slick-dots
+{
+	display:none !important;
+}
+.code-logos
+{
+	display:none;
+}
+.slick-disabled {
+    display: none !important;
+}
+.sp-ft-logos-row {
+    padding-top: 0 !important;
+}
+.slick-prev:before {
+       font-family: 'Line Awesome Free' !important;
+    font-weight: 900;
+    content: '\f104' !important;
+}
+.slick-next:before {
+    font-family: 'Line Awesome Free' !important;
+    font-weight: 900;
+    content: '\f105' !important;
+}
+
+button#slide-right {
+    background: none;
+    border: none;
+    color: #fff;
+}
+button#slide-left {
+    background: none;
+    border: none;
+    color: #fff;
+}
+#arrow-block{
+    position: sticky;
+    right: 0;
+}
+button#slide-left:after {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    content: '\f104';
+	
+}
+button#slide-right:after {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    content: '\f105';
+}
+#clients-logos-col{	
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;	
+}
+button#slide-right:hover {
+    cursor: pointer;
+}
+button#slide-left:hover {
+    cursor: pointer;
+}
+.sp-ft-logos-row {
+    width: 96% !important;
+    display: inline-block;
+}
+.sp-arrow-row {
+    display: inline-block;
+    width: 26px;
+}
+/***************header *****************/
+
+/* Game Category Grid, July 11, 2022. @jenny*/
+
+body.archive.category.category-games .et_pb_blog_grid .et_pb_post {
+    border: 0px;
+}
+    
+body.archive.category.category-games .cat-item-9, body.archive.category.category-games .cat-item-7, body.archive.category.category-games .cat-item-1 {
+	display: none;
+}
+
+body.archive.category.category-games .current-cat {
+	font-weight: bolder;
+}
+
+.et-blog-css-grid > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+    
+.et-blog-css-grid .entry-title a {
+    font-size: 14px;
+}
+
+.et-blog-css-grid .et_pb_post a img  {
+    border-radius: 25px;
+}
+
+.et-blog-css-grid .et_pb_post .entry-featured-image-url {
+    margin-bottom: 10px;
+}
+
+
+/******
+Promo banners
+****/
+
+.promo-slides .et_pb_slide_0 .et_pb_slide_description {
+    background-image: none;
+    padding-top: 0 !important;
+    margin-top: 0;
+}
+
+.promo-slides .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide_0 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_0 .et_pb_slide_content {
+    margin-top: 0 !important;
+}
+.promo-slides .et_pb_slide_0 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_0 .et_pb_slide_content {
+    margin-top: 0 !important;
+	padding-top: 0;
+}
+.et-pb-arrow-next, .et-pb-arrow-prev {
+    top: 20% !Important;
+}
+
+/* slide 3*/
+
+.promo-slides .et_pb_slide_3 .et_pb_slide_description {
+    background-image: none;
+    padding-top: 0 !important;
+    margin-top: 0;
+}
+.promo-slides .et_pb_slide_3 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_3 .et_pb_slide_content {
+    margin-top: 0 !important;
+}
+.promo-slides .et_pb_slide_3 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_3 .et_pb_slide_content {
+    margin-top: 0 !important;
+	padding-top: 0;
+}
+
+.promo-slides .et_pb_slide_1 .et_pb_slide_description {
+    background-image: none;
+    padding-top: 0 !important;
+    margin-top: 0;
+}
+.promo-slides .et_pb_slide_1 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_1 .et_pb_slide_content {
+    margin-top: 0 !important;
+}
+.promo-slides .et_pb_slide_1 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_1 .et_pb_slide_content {
+    margin-top: 0 !important;
+	padding-top: 0;
+}
+
+.promo-slides .et_pb_slide_2 .et_pb_slide_description {
+    background-image: none;
+    padding-top: 0 !important;
+    margin-top: 0;
+}
+.promo-slides .et_pb_slide_2 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_2 .et_pb_slide_content {
+    margin-top: 0 !important;
+}
+.promo-slides .et_pb_slide_2 .et_pb_slider_container_inner {
+    vertical-align: top;
+}
+.promo-slides .et_pb_slide.et_pb_slide_2 .et_pb_slide_content {
+    margin-top: 0 !important;
+	padding-top: 0;
+}
+
+.et_pb_slides .et_pb_container {
+    max-height: 600px;
+}
+.mob-promo{
+	display:none;
+}
+
+@media only screen and (max-width: 600px) {
+  .mob-promo{
+	display:block;
+}
+.desk-promo{
+	display:none;
+}
+.et_pb_slides .et_pb_container {
+    max-height: 500px;
+}
+}
+
+/*
+.wpcr3_reviews_holder .wpcr3_review .wpcr3_review_author {
+    display: block !important;
+    position: absolute;
+    top: 60px;
+}
+*/
+div.wpcr3_review div.wpcr3_review_title {
+    font-size: 20px !important;
+    padding: 10px 0 0 0;
+}
+
+
+
+
+/****menu ***/
+.img-wrap{
+    background-position:center !important;
+    height: 100vh;
+}
+.et-menu-nav ul{
+    margin:0;
+    padding:10px 0;
+}
+
+.et-menu-nav li{
+    list-style:none;
+    position: static;
+}
+.et-menu-nav.open .dropdown.right {
+    right: 85px;
+	    display: none !important;
+}
+.et-menu-nav li a:hover{
+    color:#000000;
+}
+
+.dropdown {
+    color: #a64485;
+    cursor: pointer;
+    display: block !important;
+    padding: 2px 20px;
+    position: absolute;
+    top: 0;
+    z-index: 15;
+    transition: all 0.3s ease;
+}
+
+
+.dropdown.right{
+    right: 0;
+	font-size:22px;
+}
+
+.dropdown.left{
+    left: 0;
+    top: -44px;
+	font-size:22px;
+	
+}
+
+.footer-lg {
+    margin-bottom: 0;
+}
+body .et-menu-nav #menu-main-menu .sub-menu{
+    box-shadow: none;
+    bottom: 0;
+    display:none;
+    left: 300px;
+    padding-left: 47px;
+    position: absolute;
+    top: 0;
+    width: 315px;
+    z-index: 10; 
+padding-top:0;	
+}
+
+.et-menu-nav #menu-main-menu{
+    left: 0;
+    position: relative;
+    /*transition: all 0.3s ease;*/
+}
+body .et-menu-nav.open #menu-main-menu{
+    left: -300px;
+}
+
+.et-menu-nav.open .sub-menu
+{
+	visibility:visible;
+	opacity:1;
+}
+
+
+
+/** default ***/
+/*
+.nav li.et-touch-hover>ul, .nav li:hover>ul {
+    opacity: 0;
+    visibility: hidden;
+}*/
+.nav li ul {
+    border-top: none !Important;
+}
+li#menu-item-1990 .span-wrap a:before {
+    background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/all-games-ico-purple.svg);
+}
+.et-menu li li a {
+    width: auto !important;
+}
+
+  .slide-in-menu-container.slide-in-menu {
+    min-width: 362px;
+	max-width: 362px;
+}
+.account-sec.et-last-child {
+    z-index: 0;
+}
+.header-section .et_pb_row.et_pb_row_0_tb_header {
+    z-index: 0;
+}
+.slide-in-menu-container:after {
+    content: "";
+    background: rgb(18 18 18 / 73%);
+    position: fixed;
+    top: 0;
+    left: 362px;
+    bottom: 0;
+    transition: none;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+}
+.slide-in-menu-container.slide-in-menu:after {
+    opacity: 1;
+    transition: all .9s cubic-bezier(.645,.045,.355,1);
+    visibility: visible;
+}
+
+
+/************ reviews order change *********/
+.wpcr3_review :nth-child(1) {order: 2;}
+.wpcr3_review :nth-child(2) { order: 3; }
+  .wpcr3_review :nth-child(3) {order: 4;display: inline-block;}
+        .wpcr3_review :nth-child(4) {order: 6;display: inline-block;}
+        .wpcr3_review :nth-child(5) {order: 2;/* display: block !important; */}
+
+
+.wpcr3_review :nth-child(6) {}
+
+.wpcr3_review :nth-child(7) {
+    order: 1;
+}
+
+.wpcr3_review :nth-child(9) {
+    order: 8;
+}
+div.wpcr3_review {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.wpcr3_review .wpcr3_review_datePublished {
+    position: relative;
+    left: 0;
+}
+div.wpcr3_review div.wpcr3_review_ratingValue {
+    padding-left: 0;
+}
+.header-content-row {
+	position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 10%;
+}
+header .header-background{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 10% !important;
+    background-size: 100% !important;
+}
+@media (max-width: 980px){
+header .header-background {
+  
+    height: 320px;
+}
+}
+@media (min-width: 981px){
+.page-title {
+    margin-bottom: 10px !important;
+}
+}
+/*
+.slide-in-menu-container.slide-in-menu:after {
+    opacity: 1;
+    transition: all .9s cubic-bezier(.645,.045,.355,1);
+    visibility: visible;
+}
+.slide-in-menu-container:after {
+    content: "";
+    background: rgb(135 9 56 / 85%);
+    position: fixed;
+    top: 0;
+    left: 315px;
+    width: calc(100% - 315px);
+    bottom: 0;
+    transition: none;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+*/
+
+/*******PDN Menu ******/
+
+body .et-menu-nav #menu-main-menu .sub-menu {
+    position: relative;
+    left: 0;
+    padding-left: 0;
+    margin-top: 20px;
+	width: auto;
+}
+
+body .et-menu-nav.open #menu-main-menu {
+    left: 0;
+}
+#menu-main-menu li:first-child {
+    display: block;
+	text-align: left;
+}
+.et-menu-nav.open .dropdown.right {
+    right: 0;
+	display:block !important;
+	    transform: rotate(90deg);
+}
+.dropdown{
+	    top: -6px;
+}
+.slide-in-menu .et_pb_column.et_pb_column--with-menu {
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+.slide-in-menu .et_pb_module.et_pb_menu {
+    top: 25%;
+    position: absolute;
+    width: 100%;
+}
+.nav li.et-touch-hover>ulul.sub-menu, .nav li:hover>ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+.nav li ul.sub-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.hide {
+    display: none;
+}
+@media (max-width: 600px){
+	.slide-in-menu-container.slide-in-menu {
+		overflow-y: auto;
+	}
+	.digit {
+    right: 15px;
+	margin-top: 7px;
+	}
+}
+/**** Quicke review ***/
+.digit {
+    position: absolute;
+    right: 0;
+}
+p.perc_val {
+    color: #46104E;
+}
+span.rvs_total {
+    font-weight: bold;
+}
+.wpcr3_review :nth-child(11) {
+    order: 8;
+}
+
+
+/* knowledge base hiding the tp image */
+
+.single-knowledgebase figure.wp-block-image.size-large {
+	display: none;
+}
+
+
+
+/** home page game review section carousel */
+
+.home-game-reviews h4 a{
+	font-size: 18px;
+    font-weight: 900;
+    color: #2F0536;
+    white-space: nowrap;
+}
+
+.home-game-reviews .home-slider-article h4 a {
+	padding-left: 20px;
+}
+
+.home-game-reviews {
+	display: flex;
+	justify-content: space-between;
+}
+
+.home-game-reviews .article_container {
+	width: 100%;
+	display: flex;
+	justify-content: left;
+	overflow: auto;
+	position:relative;
+	scroll-behavior:smooth;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.home-game-reviews .article_container::-webkit-scrollbar{
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.home-game-reviews .article_container {
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.home-game-reviews div .home-slider-article{
+	min-width: 328px;
+	height: 283px;
+	margin: 1px 10px 0 1px;
+	overflow: hidden;
+	border-radius: 3px;
+    background-color: white;
+	box-shadow: 0 4px 7px #0000001a;
+}
+.home-game-reviews div .home-slider-article .games-img{
+	height: 223px;
+    width: 100%;
+    max-width: 333px;
+}
+.game-review-title  {
+	margin-bottom:0 !important;
+}
+
+.game-review-title div {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding: 0 10px;
+}
+.game-review-title a{
+	color: #1C8FDF !important;
+}
+.game-review-sect{
+	max-width: 100%;
+}
+.game-review-sect .et_pb_row{
+	width: 100%;
+	max-width: 100%;
+}
+.game-review-sect .home-slider-article .entry-featured-image-url {
+    margin-bottom: 20px;
+}
+.game-review-sect .button-next {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    height: calc(100% - 100px);
+    width: 76px;
+    cursor: pointer;
+} 
+
+
+
+.game-review-sect .button-next:before {
+    content: '';
+    position: absolute;
+    width: 76px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-size: 100% 100%;
+    background: url(/wp-content/uploads/2022/12/sp-hover-arrow-right.svg) no-repeat center center;
+}
+ .game-review-sect .button-prev {
+    position: absolute;
+    z-index: 100;
+    left: -14px;
+    height: calc(100% - 100px);
+    width: 76px;
+    margin-top: 11px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+}
+.button-prev-hidden {
+	display: none;
+}
+.home-game-reviews:hover .button-next{
+    display: block;
+    visibility: visible;
+}
+.game-review-sect .button-prev:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 76px;
+    height: calc(100% - 26px);
+    background-size: 100% 100%;
+    background: url(/wp-content/uploads/2022/12/sp-hover-arrow-left.svg) no-repeat center center;
+}
+/** new game hub page **/
+
+.game-review-carousel-row .game-hub-heading {
+	margin-bottom:0 !important;
+	padding-left: 10px;
+    padding-right: 10px;
+}
+.game-review-carousel-row .game-hub-heading div{
+	display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.game-review-carousel-row .home-game-reviews .article_container {
+	padding: 0 10px;
+}
+.game-review-carousel-row .game-hub-heading a{
+	color: #1C8FDF !important;
+}
+.game-review-carousel-row .game-hub-heading .img-heading img {
+	width: 40px;
+	padding-right: 5px;
+}
+.home-game-reviews div .new-game-article {
+	min-width: 361px;
+	margin: 1px 10px 0 1px;
+	overflow: hidden;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 4px 7px #0000001A;
+	border: 1px solid #EAEAEA;
+	border-radius: 0px 0px 5px 5px;
+	opacity: 1;
+}
+.new-game-article .art-content-game .art-heading {
+	display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    align-items: flex-start;
+}
+.art-heading .entry-title a {
+	text-align: left;	
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0px;
+	color: #2F0536;
+}
+.new-game-article .gamehub-img {
+	height: 228px;
+}
+.new-game-article .art-content-game .art-heading .entry-title{
+	width: 85%;
+	overflow: hidden;
+}
+.new-game-article .art-content-game .art-heading h4.entry-title{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.art-rating, .provider-block {
+	width: 95%;
+	margin: auto;
+}
+.art-rating p, .provider-block p{
+	display: inline-block;
+	color: #2F0536;
+	font-size: 14px;
+	padding-bottom: 0;
+}
+.art-rating .rate-title, .provider-block .provider-title {
+	width: 70px;
+}
+.art-content-game {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.gamehub-last-section .last-section-row {
+	max-width: 550px;
+}
+.gamehub-last-section .last-section-row .last-section-text {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 10px 20px #00000064;
+	border: 12px solid #EFEFEF;
+	border-radius: 16px;
+	padding: 40px 55px;
+}
+.page-id-6377 footer.et-l.et-l--footer {
+	padding-top: 0px;
+}
+@media (min-width: 1800px){
+.gamehub-last-section{
+    padding: 150px 0 !important;
+}
+}
+
+@media (min-width: 767px){
+	.game-review-first_img .et_pb_row  {
+	display: flex;
+	align-items:center;
+}	
+}
+.page-id-6377 .et_pb_section.et_pb_section_3_tb_header.header-background.et_pb_with_background.et_section_regular {
+    display: none;
+}
+@media (max-width:600px){
+
+.home .game-review-title h2{
+	font-size: 18px;
+}		
+.home .home-game-reviews div article {
+    min-width: 190px;
+    height: 175px;
+}	
+.home .home-game-reviews div article img {
+    height: 120px;
+    object-fit: cover;
+    width: 100%;
+}
+.home .home-game-reviews h4 a {
+    font-size: 12px;
+    padding-left: 5px;
+}
+.home-game-reviews:hover .button-next , .home-game-reviews:hover .button-prev{
+    display: none;
+    visibility: hidden;
+}
+.home .game-review-sect{
+	padding: 20px 0 !important;
+}
+.home .game-review-sect div.et_pb_row{
+	padding-bottom: 0 !important;
+}
+.home-game-reviews div .new-game-article {
+	min-width: 168px;
+}
+.new-game-article .gamehub-img {
+	height: 107px;
+}
+
+.art-heading .wishlist-img {
+	display: none;
+}
+.art-rating .rate-title, .provider-block .provider-title {
+	width: 50px;
+}
+.game-review-carousel-row .game-hub-heading .img-heading img {
+	padding-top: 0;
+}
+.game-review-carousel-row .game-hub-heading .img-heading h2 {
+	font-size: 18px;
+}
+.game-review-carousel-row .game-hub-heading a {
+    display: block;
+    margin-top: -3px;
+}
+.art-heading .entry-title a , .art-rating p, .provider-block p {
+    font-size: 12px;
+}
+.game-review-carousel-row .game-hub-heading a span {
+	display: none;
+}
+.art-content-game {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.rating-img {
+	height: 13px;
+}
+.gamehub-last-section .last-section-row .last-section-text {
+	padding: 20px 22px;
+	font-size: 11px;
+}
+}
+
+/***** landing page **/
+
+.landing-page-section {
+	background-position: top right !important;
+}
+.footer-img{
+	position: fixed;
+    bottom: 30px;
+    overflow: hidden;
+}
+
+.footer-img img{
+    border-radius: 40px;
+	padding-right: 10px;
+}
+
+.landing-page-section .landing-page-box .content {
+	width: 400px;
+}
+.landing-page-section .landing-page-box .content h1 {
+	font-size: 170px !important;
+    letter-spacing: -5.13px;
+    line-height: 209px;
+    font-weight: 800 !important;
+    text-align: center;
+	text-shadow: 4px 8px 20px #0000004d;
+}
+.landing-page-section .landing-page-box .content h2 {
+	font-size: 65px !important;
+    letter-spacing: -2.04px;
+    line-height: 83px;
+	font-weight: 800 !important;
+    text-align: center;
+	margin-top: -70px;
+}
+.landing-page-section .landing-page-box .content .join-now {
+	display: block;
+	background: #EA728C 0% 0% no-repeat padding-box;
+	border-radius: 50px;
+	width: 330px;
+	margin: auto;
+	text-align: left;
+	font-size: 38px;
+	font-weight: 800 !important;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	padding: 20px 65px;
+	font-family: 'Gilroy-Bold';
+	text-transform: uppercase;
+	text-align: center;
+} 
+.landing-page-section .landing-page-box .content  p{
+	text-align: center;
+}
+.landing-page-section .landing-page-box .content .terms {
+	display: block;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 50px;
+	font-size: 22px;
+	letter-spacing: 0px;
+	cursor: pointer;
+}
+.landing-page-desk-menu a , .landing-page-menu .slot-left-menu.et_pb_menu_0_tb_header.et_pb_menu ul li a  {
+    color: #ffffff !important;
+    margin-top: 27px;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Gilroy-Bold' !important;
+}
+.landing-page-box .header-content {
+    padding-left: 8% !important;
+}
+.landing-page-desk-menu .menu-btns a{
+	width: 143px;
+    background: #E5376C 0% 0% no-repeat padding-box;
+    border-radius: 50px;
+    padding: 10px 0px;
+	margin-top: 10px;
+	font-size: 18px;
+    line-height: 22px;
+}
+.landing-page-desk-menu .menu-links a , .landing-page-menu .slot-left-menu.et_pb_menu_0_tb_header.et_pb_menu ul li a  {
+	text-transform: uppercase;
+}
+.landing-page-menu .slide-in-menu-container {
+	background-color: #20043b !important;
+}
+.landing-page-menu .tab-btns .m-btns{
+	display: flex; 
+	justify-content: space-between;
+	align-items: center;
+	width: 65%;
+    margin-left: auto;
+	color: #ffffff;
+} 
+.landing-page-menu .tab-btns > div a{
+	color: #ffffff;
+	display: block;
+	background: #EA728C 0% 0% no-repeat padding-box;
+	border-radius: 50px;
+	font-size: 14px;
+	font-weight: 800 !important;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	padding: 8px 25px;
+	font-family: 'Gilroy-Bold';
+	text-transform: uppercase;
+	text-align: center;
+} 
+ul#menu-landing-page-menu {
+	margin-top: 90px;
+}
+body .landing-page-menu {
+	padding: 20px 0 !important;
+}
+.landing-tab-row #slide-column {
+	z-index: 9999;
+}
+@media (max-width:980px){
+.landing-page-section .landing-page-box .header-content > img {
+	position: fixed;
+    top: 15%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+	}
+.landing-page-section .landing-page-box .header-content .content {
+	width: 100%;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+	text-align: center;
+	}
+	.landing-page-menu .tab-btns .m-btns{
+	width: 100%;
+} 
+	.tab-row {
+		display:flex;
+	}
+	.landing-page-menu .tab-btns {
+		width: 80%;
+		margin-left: auto;
+	}
+	.landing-page-menu .tab-btns > div a{ 
+		width: 200px;
+	}
+	.landing-page-menu .tab-btns .m-btns a:nth-child(2){
+	margin-left: 10px;
+} 
+.footer-img {
+	bottom: 0;
+    left: 0;
+    padding: 0 30px 20px;
+	background-color: rgba(0,0,0,0.1);
+	text-align: center;
+}	
+	.footer-img p{
+		text-align: center;
+	}
+.footer-img p a{
+		text-decoration: underline;
+	color: #ffffff;
+	font-size: 18px;
+	margin-top: 30px;
+    display: block;
+	}	
+.landing-page-menu #slide-column > div.slot-left-menu {
+    top: 0 !important;
+    
+}
+}
+@media (max-width:980px) and (min-width:768px){
+	.landing-page-tab-section h1 , .landing-page-tab-section h2, .landing-page-tab-section .span-up {
+		display:inline;
+	}	
+.landing-page-section .landing-page-box .content h1 , .landing-page-section .landing-page-box .content h2 {
+		font-size:125px !important;
+	}		
+	.landing-page-section .landing-page-box .content .span-up{
+		width: 55px;
+   		display: inline-block;
+    font-size: 26px;
+    position: relative;
+    top: -25px;
+	font-family: 'Gilroy-Bold';
+	}
+	.landing-page-section .landing-page-box .content .span-up span{
+   		display: block;
+	}
+	.landing-page-section .landing-page-box .header-content .content {
+    top: 25%;
+	}
+
+}
+
+@media (max-width:767px){
+	.landing-page-section .landing-page-box .content h1 {
+		font-size:125px !important;
+		letter-spacing: -3.75px;
+	}	
+	.landing-page-section .landing-page-box .content h2 {
+		font-size:48px !important;
+		letter-spacing: -1.47px;
+		line-height: 60px;
+	}	
+	.landing-page-section .landing-page-box .content .join-now {
+	font-size: 30px;
+    width: 300px;
+	max-width: 100%;
+	} 
+
+	.landing-page-menu .slide-in-menu-container {
+		height: 360px;
+		overflow: hidden;
+	}
+	#menu-landing-page-menu > li {
+		padding-left: 0 !important;
+		justify-content: center !important;
+		margin-top: 0px !important;
+		border-bottom: 1px solid #4B1E5E;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	#menu-landing-page-menu li:last-child{
+		border-bottom: none;
+	}
+    #menu-landing-page-menu li:first-child{
+		border-top: 1px solid #4B1E5E;
+	}
+	#menu-landing-page-menu > li a {
+		margin-top: 0 !important;
+		width: 100%;
+	}
+	
+	.landing-page-menu .slide-in-menu-container.slide-in-menu:after {
+    opacity: 0 !important;
+	}
+	
+	.landing-page-menu .slide-in-menu-container.slide-in-menu {
+    width: 100%;
+	max-width: 100%;
+}
+	
+}
+
+@media (max-width:400px){
+	.tab-row {
+		width: 95% !important;
+	}
+}
+
+
+@media (max-width:500px){
+.landing-page-section .landing-page-box .header-content > img {
+	padding: 20px;
+	}
+}
+
+/** terms and condition popup */
+.popup {
+  width: 100%;
+  height: 100%;
+/*  background: rgba(0, 0, 0, 0.4); */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+}
+.popup .popup__content {
+  width: 80%;
+  overflow: auto;
+  padding: 50px;
+  background: white;
+  color: black;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+.popup .popup__content p {
+	font-size: 14px;
+}
+.popup .popup__content ul {
+	padding-left: 0;
+}
+.popup .popup__content .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  display: block;
+}
+.popup .popup__content .close span {
+  cursor: pointer;
+  position: fixed;
+  width: 20px;
+  height: 3px;
+  background: #099ccc;
+  top: 20px;	
+}
+.popup .popup__content .close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.popup .popup__content .close span:nth-child(2), .popup .popup__content .close span:nth-child(3) {
+  transform: rotate(135deg);
+}
+@media (max-width:768px){
+	.popup .popup__content {
+		width: 100% !important;
+		padding: 10px;
+	}
+}
+figure.wp-block-table {
+	margin-bottom: 20px;
+}
+/**fixing header for homepage **/
+@media only screen and (min-width: 981px){
+body .header-section .header-row {
+    padding: 10px 0 !important;
+}
+}
+.header-section .header-row {
+	display: flex !important;
+	align-items: center !important;
+	width: 97% !important;
+}
+
+@media only screen and (max-width: 460px){
+.header-section .header-row {
+	display: flex !important;
+	align-items: center !important;
+	width: 100%;
+}
+}
+
+#slide-in-open {
+    left: 0 !important;
+}
+
+.logo-img {
+	margin-left: 45px !important;
+}
+.line {
+	width: 65% !important;
+}
+.line-2 {
+	width: 45% !important;
+}
+.gameinfo .quick-chart .progress:nth-child(even) .bar {
+	position: relative;
+    float: left;
+    min-width: 1%;
+    height: 100%;
+    background: #FF93AA;
+    background-image: linear-gradient(-45deg,rgba(255,255,255,0.125) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.125) 50%,rgba(255,255,255,0.125) 75%,transparent 75%,transparent);
+    border-radius: 0 27px 27px 0;
+    background-size: 90px 90px;
+} 
+
+.rating-col p, .rating-col, .percent {
+    color: #46104e;
+}
+
+@media screen and (max-width: 460px){ 
+
+.home header {
+	min-height: 100px;
+}
+
+	.the-beach-page{
+		min-height: 1302px !important;
+	}		
+	.header-section {
+		padding: 0!important;
+		min-height: 95px;
+	}
+	.header-row .et_pb_column {
+		width: 50%!important;
+	}
+	.home .beach-img-col {
+		min-height: 170px !important;
+	}
+	.home .header-row img.wp-image-13{
+		min-height: 45px !important;
+	}
+	
+	.home .et_pb_row_0_tb_header {
+		min-height: 36px !important;
+	}
+	
+	.home .header-row .et_pb_column.et_pb_column_1_tb_header {
+		min-height: 50px !important;
+	} 
+} 
+
+.et_pb_button_module_wrapper>a.usd-btn, .et_pb_button_module_wrapper>a.dep-btn, .menu-code-mod{
+	display: none;
+	}
+
+
+
+
+/** new category pages css **/
+
+
+
+.page-id-7231 div.et_pb_section.et_pb_section_3_tb_header {
+	display: none;
+}
+
+.single-game-page-top-title h1 {
+	font-size: 58px !important;
+}
+
+.free-online-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+
+.free-online-block .free-online-svg	{
+	width: 30%;
+}
+
+.free-online-block .free-online-block-content {
+	width: 100%;
+}
+
+.free-online-block .free-online-block-content-title {
+	text-align: left;
+	font-size:28px;
+	line-height: 27px; 
+	font-family: 'Gilroy-Medium';
+	letter-spacing: -0.7px;
+	color: #2F0536;
+    padding-bottom: 10px;
+}
+
+.single-game-page-feature-section .home-slider-article{
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 7px #0000001A;
+    border: 1px solid #EAEAEA;
+    border-radius: 0px 0px 5px 5px;
+    opacity: 1;
+	min-width: 360px !important;
+}
+
+.single-game-page-feature-section .home-game-reviews div .home-slider-article .games-img {
+    height: 228px;
+}
+
+.single-game-page-feature-section .home-slider-article h4.entry-title{
+	margin-top: 20px;
+}
+
+.all-games-article-section, .all-games-article-section div{
+	max-width: 100% !important;
+	width: 100%;
+}
+.all-games-article-section .all-games-article-block div{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.all-games-article-section .all-games-article-block div article{
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 7px #0000001A;
+    border: 1px solid #EAEAEA;
+    border-radius: 0px 0px 5px 5px;
+    opacity: 1;
+	width: 360px !important;
+	overflow:hidden;
+}
+
+.all-games-article-block h4 a {
+    font-size: 18px;
+    font-weight: 900;
+    color: #2F0536;
+    white-space: nowrap;
+	padding-left: 20px;
+	text-overflow: ellipsis;
+}
+
+.all-games-article-section #pa_load_more:hover {
+	border: 2px solid !important;
+}
+
+.all-games-article-section .pa-blog-load-more {
+	margin-bottom: 0 !important;
+}
+
+.single-game-page-slider-section .single-game-page-slider-row {
+	width: 100%;
+	max-width: 100%;
+}
+
+.single-game-page-slider-section .single-game-page-slider-row .et_pb_slide_description {
+	padding: 18% 16% !important;
+}
+
+.single-game-page-slider-section .single-game-page-slider-row .et_pb_slide_content p{
+	font-family: 'Gilroy-Bold';
+    text-align: center;
+    font-size: 22px;
+	line-height: 31px;
+    letter-spacing: -0.55px;
+    color: #A64485;
+    background: white;
+    padding: 40px 30px;
+    box-shadow: 0px 10px 20px #00000064;
+    border: 12px solid #EFEFEF;
+    border-radius: 16px;
+    opacity: 1;
+}
+
+.single-game-page-slider-section .single-game-page-slider-row .et-pb-controllers a{
+	box-shadow: 0px 3px 6px #00000065;
+	opacity: 1;
+	height: 16px;
+	width: 16px;
+}
+
+.single-game-conclusion-section p {
+	font-size: 18px;
+	line-height: 31px;
+	font-family: 'Gilroy-Regular';
+	letter-spacing: 0px;
+	color: #2F0536;
+}
+
+.single-game-conclusion-section h2 {
+	font-size: 40px !important;
+	font-family: 'Gilroy-Bold' !important;
+	letter-spacing: -1px;
+	color: #A64485;
+}
+
+.single-game-page-first-section, .single-game-page-slider-section, .single-game-conclusion-section {
+	padding: 0 !important;
+}
+
+.single-game-page-feature-section {
+	padding-bottom: 0 !important;
+}
+.all-games-article-section {
+	padding: 0 10px !important;
+}
+
+.single-game-page-freeslots-section .heading-text-free-slots h2 {
+	text-align: center;
+	font-size: 50px !important;
+	line-height:70px;
+	font-family: 'Gilroy-Medium' !important;
+	letter-spacing: -1.25px;
+	color: #A64485;
+}
+
+.single-game-page-freeslots-section .heading-text-free-slots h2 span {
+	font-family: 'Gilroy-Bold' !important;
+}
+
+.all-games-article-section .et_pb_text {
+	margin-bottom: 0 !important;
+}
+
+.single-game-page-first-section h2 {
+	text-align: left;
+	font-size: 58px !important;
+	line-height:64px;
+	font-family: 'Gilroy-Medium' !important;
+	letter-spacing: -1.45px;
+	color: #A64485;
+}
+
+.single-game-page-first-section p {
+	text-align: left;
+	font-size: 18px !important;
+	line-height:31px;
+	font-family: 'Gilroy-Regular' !important;
+	letter-spacing: 0px;
+	color: #2F0536;
+}
+
+@media (min-width: 1400px){
+.single-game-page-slider-section .et-pb-controllers {
+	bottom: 30%;
+}
+}
+
+@media (min-width: 980px){
+.single-game-page-slider-section .et-pb-controllers {
+	bottom: 20%;
+}
+.Menu--users {
+    min-height: 480px;
+}
+.menu-code-mods {
+    margin-bottom: 0 !important;
+}
+}
+
+@media (min-width: 1320px) and (max-width: 1700px){
+
+.free-online-block .free-online-block-content {
+	width: 90%;
+}
+
+.single-game-page-freeslots-section .et_pb_row_4_tb_body {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+}
+
+@media (min-width: 980px) and (max-width: 1320px){
+
+.single-game-page-feature-section .home-slider-article{
+	min-width: 279px !important;
+	height: 245px !important;
+}
+
+.single-game-page-feature-section .home-game-reviews div .home-slider-article .games-img {
+    height: 177px;
+}
+
+.all-games-article-section .all-games-article-block div article {
+	width: 279px !important;
+}
+
+.single-game-conclusion-section .et_pb_row {
+	width: 100%;
+	padding: 0 25px;
+}
+
+.free-online-block .free-online-block-content {
+	width: 70%;
+}
+
+.single-game-page-freeslots-section .et_pb_row_4_tb_body {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+}
+
+@media (max-width: 900px){
+
+.single-game-page-first-section .et_pb_row {
+	display: flex;
+	flex-direction: column-reverse;
+}
+.single-game-page-freeslots-section .free-online-block {
+	margin-bottom: 50px;
+}
+}
+
+@media (max-width: 767px){
+.single-game-page-freeslots-section .free-online-block {
+	flex-direction: column;
+	align-items: center;
+}
+.free-online-block .free-online-block-content{
+	padding-left: 0;
+}
+.free-online-block .free-online-block-content-title {
+	text-align: center;
+	padding-top: 20px !important;
+}
+.single-game-page-feature-section .home-slider-article{
+	min-width: 168px !important;
+	height: 152px !important;
+}
+.single-game-page-feature-section .home-game-reviews div .home-slider-article .games-img {
+    height: 107px;
+}
+.single-game-page-feature-section .home-game-reviews h4 a , .all-games-article-block h4 a{
+	font-size: 12px;
+	padding-left: 10px;
+}
+.single-game-page-feature-section .home-slider-article .entry-featured-image-url,
+.all-games-article-section .all-games-article-block div article .entry-featured-image-url {
+    margin-bottom: 12px;
+}
+.single-game-page-feature-section .home-slider-article h4.entry-title {
+    margin-top: 0;
+}
+.all-games-article-section .all-games-article-block div article {
+	width: 168px !important;
+	height: 152px;
+}
+.single-game-page-feature-section h2, .all-games-article-section h2 {
+	font-size: 28px !important;
+}
+.single-game-page-first-section h2 {
+    text-align: center;
+    font-size: 40px !important;
+    line-height: 40px;
+    letter-spacing: -1px;
+}
+.single-game-page-freeslots-section .heading-text-free-slots h2 {
+    font-size: 34px !important;
+    letter-spacing: -0.85px;
+}
+.single-game-conclusion-section h2 {
+    font-size: 28px !important;
+    letter-spacing: -0.7px;
+}
+.single-game-page-slider-section .single-game-page-slider-row .et_pb_slide_content p{
+    font-size: 18px;
+	line-height: 27px;
+    letter-spacing: -0.45px;
+}
+.free-online-block .free-online-svg	{
+	width: unset;
+}
+}
+.home ul li {
+    margin-left: 0;
+}
+/******Theme Options css ****/
+/*change hamburger icon to x when mobile menu is open*/
+#et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar::before,
+.et_pb_module.et_pb_menu .et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar::before {
+	content: '\4d';
+}
+/*adjust the new toggle element which is added via jQuery*/
+
+ul.et_mobile_menu li.menu-item-has-children .mobile-toggle,
+ul.et_mobile_menu li.page_item_has_children .mobile-toggle,
+.et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children .mobile-toggle,
+.et-db #et-boc .et-l ul.et_mobile_menu li.page_item_has_children .mobile-toggle {
+	width: 44px;
+	height: 100%;
+	padding: 0px !important;
+	max-height: 44px;
+	border: none;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 999;
+	background-color: transparent;
+}
+/*some code to keep everyting positioned properly*/
+
+ul.et_mobile_menu>li.menu-item-has-children,
+ul.et_mobile_menu>li.page_item_has_children,
+ul.et_mobile_menu>li.menu-item-has-children .sub-menu li.menu-item-has-children,
+.et-db #et-boc .et-l ul.et_mobile_menu>li.menu-item-has-children,
+.et-db #et-boc .et-l ul.et_mobile_menu>li.page_item_has_children,
+.et-db #et-boc .et-l ul.et_mobile_menu>li.menu-item-has-children .sub-menu li.menu-item-has-children {
+	position: relative;
+}
+
+
+/*remove default background color from menu items that have children*/
+
+.et_mobile_menu .menu-item-has-children>a,
+.et-db #et-boc .et-l .et_mobile_menu .menu-item-has-children>a {
+	background-color: transparent;
+}
+
+
+/*hide the submenu by default*/
+
+/*
+ul.et_mobile_menu .menu-item-has-children .sub-menu,
+#main-header ul.et_mobile_menu .menu-item-has-children .sub-menu,
+.et-db #et-boc .et-l ul.et_mobile_menu .menu-item-has-children .sub-menu,
+.et-db #main-header ul.et_mobile_menu .menu-item-has-children .sub-menu {
+	display: none !important;
+	visibility: hidden !important;
+}
+*/
+
+/*show the submenu when toggled open*/
+/*
+ul.et_mobile_menu .menu-item-has-children .sub-menu.visible,
+#main-header ul.et_mobile_menu .menu-item-has-children .sub-menu.visible,
+.et-db #et-boc .et-l ul.et_mobile_menu .menu-item-has-children .sub-menu.visible,
+.et-db #main-header ul.et_mobile_menu .menu-item-has-children .sub-menu.visible {
+	display: block !important;
+	visibility: visible !important;
+}
+*/
+
+/*adjust the toggle icon position and transparency*/
+
+ul.et_mobile_menu li.menu-item-has-children .mobile-toggle,
+.et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children .mobile-toggle {
+	text-align: center;
+	opacity: 1;
+}
+/*submenu toggle icon when closed*/
+
+ul.et_mobile_menu li.menu-item-has-children .mobile-toggle::after,
+.et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children .mobile-toggle::after {
+	top: 10px;
+	position: relative;
+	font-family: "ETModules";
+	content: '\33';
+	color: #00d263;
+	background: #f0f3f6;
+	border-radius: 50%;
+	padding: 3px;
+}
+/*submenu toggle icon when open*/
+
+ul.et_mobile_menu li.menu-item-has-children.dt-open>.mobile-toggle::after,
+.et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children.dt-open>.mobile-toggle::after {
+	content: '\32';
+}
+/*add point on top of the menu submenu dropdown*/
+
+.et_pb_menu_0.et_pb_menu .et_mobile_menu:after {
+	position: absolute;
+	right: 5%;
+	margin-left: -20px;
+	top: -14px;
+	width: 0;
+	height: 0;
+	content: '';
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #ffffff;
+}
+/*adjust the position of the hamburger menu*/
+
+.mobile_menu_bar {
+	position: relative;
+	display: block;
+	bottom: 10px;
+	line-height: 0;
+}
+/*force the background color and add a rounded border*/
+
+.et_pb_menu_0.et_pb_menu .et_mobile_menu,
+.et_pb_menu_0.et_pb_menu .et_mobile_menu ul {
+	background-color: #ffffff!important;
+	border-radius: 10px;
+}
+/*change hamburger icon to x when mobile menu is open*/
+
+#et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar::before,
+.et_pb_module.et_pb_menu .et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar::before {
+	content: '\4d';
+}
+/*adjust the new toggle element which is added via jQuery*/
+
+ul.et-menu li.menu-item-has-children .mobile-toggle,
+ul.et-menu li.page_item_has_children .mobile-toggle,
+.et-db #et-boc .et-l ul.et-menu li.menu-item-has-children .mobile-toggle,
+.et-db #et-boc .et-l ul.et-menu li.page_item_has_children .mobile-toggle {
+	width: 44px;
+	height: 100%;
+	padding: 0px !important;
+	max-height: 44px;
+	border: none;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 999;
+	background-color: transparent;
+}
+/*some code to keep everyting positioned properly*/
+
+ul.et-menu>li.menu-item-has-children,
+ul.et-menu>li.page_item_has_children,
+ul.et-menu>li.menu-item-has-children .sub-menu li.menu-item-has-children,
+.et-db #et-boc .et-l ul.et-menu>li.menu-item-has-children,
+.et-db #et-boc .et-l ul.et-menu>li.page_item_has_children,
+.et-db #et-boc .et-l ul.et-menu>li.menu-item-has-children .sub-menu li.menu-item-has-children {
+	position: relative;
+}
+/*remove default background color from menu items that have children*/
+
+.et-menu .menu-item-has-children>a,
+.et-db #et-boc .et-l .et-menu .menu-item-has-children>a {
+	background-color: transparent;
+}
+
+/*hide the submenu by default*/
+/*
+ul.et-menu .menu-item-has-children .sub-menu,
+#main-header ul.et-menu .menu-item-has-children .sub-menu,
+.et-db #et-boc .et-l ul.et-menu .menu-item-has-children .sub-menu,
+.et-db #main-header ul.et-menu .menu-item-has-children .sub-menu {
+	display: none !important;
+	visibility: hidden !important;
+}
+*/
+
+/*show the submenu when toggled open*/
+
+/*
+ul.et-menu .menu-item-has-children .sub-menu.visible,
+#main-header ul.et-menu .menu-item-has-children .sub-menu.visible,
+.et-db #et-boc .et-l ul.et-menu .menu-item-has-children .sub-menu.visible,
+.et-db #main-header ul.et-menu .menu-item-has-children .sub-menu.visible {
+	display: block !important;
+	visibility: visible !important;
+}*/
+
+
+/*adjust the toggle icon position and transparency*/
+
+ul.et-menu li.menu-item-has-children .mobile-toggle,
+.et-db #et-boc .et-l ul.et-menu li.menu-item-has-children .mobile-toggle {
+	text-align: center;
+	opacity: 1;
+}
+/*submenu toggle icon when closed*/
+
+ul.et-menu li.menu-item-has-children .mobile-toggle::after,
+.et-db #et-boc .et-l ul.et-menu li.menu-item-has-children .mobile-toggle::after {
+	top: 10px;
+	position: relative;
+	font-family: "ETModules";
+	content: '\33';
+	color: #00d263;
+	background: #f0f3f6;
+	border-radius: 50%;
+	padding: 3px;
+}
+
+/*submenu toggle icon when open*/
+
+ul.et-menu li.menu-item-has-children.dt-open>.mobile-toggle::after,
+.et-db #et-boc .et-l ul.et-menu li.menu-item-has-children.dt-open>.mobile-toggle::after {
+	content: '\32';
+}
+/*add point on top of the menu submenu dropdown*/
+
+.et_pb_menu_0.et_pb_menu .et-menu:after {
+	position: absolute;
+	right: 5%;
+	margin-left: -20px;
+	top: -14px;
+	width: 0;
+	height: 0;
+	content: '';
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #ffffff;
+}
+/*adjust the position of the hamburger menu*/
+
+.mobile_menu_bar {
+	position: relative;
+	display: block;
+	bottom: 10px;
+	line-height: 0;
+}
+/*force the background color and add a rounded border*/
+
+.et_pb_menu_0.et_pb_menu .et-menu,
+.et_pb_menu_0.et_pb_menu .et-menu ul {
+	background-color: #ffffff!important;
+	border-radius: 10px;
+}
+/*
+.et-menu .menu-item-has-children .sub-menu{
+display: none !important;
+}
+*/
+
+.pa-block{
+display: block !important;
+height: fit-content !important;
+padding-top: 0 !important;
+margin-top: 0 !important;
+padding: 5% !important;
+margin-bottom: 0 !important;
+margin-top: 0 !important;
+}
+
+.et-menu .menu-item-has-children .pa-submenu{
+display: block !important;
+}
+
+.opened .et-menu{
+height: fit-content !important;
+padding: 5% !important;
+}
+
+/**** Homepage menu ****/
+#slide-in-open{
+    cursor: pointer;
+      margin-bottom:0;
+    }
+    .line{
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 75%;
+    background: #E4376C;
+    border-radius: 9px;
+    opacity: 1;
+    -webkit-transition: .1s ease-in-out;
+    -moz-transition: .1s ease-in-out;
+    -o-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+    }
+    .line-2 {
+    top: 10px;
+      width: 52%;
+    } 
+    .line-3 {
+    top: 20px;
+    }
+    #slide-in-open.open .line-1 {
+    top: 10px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    }
+     
+    #slide-in-open.open .line-2 {
+    display: none;
+    }
+     
+    #slide-in-open.open .line-3 {
+    top: 10px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    }
+    .slide-in-menu {
+    left: 0 !important;
+    opacity: 1 !important;
+    }
+    .slide-in-menu-container {
+    -webkit-transition: all 0.5s ease !important;
+    -moz-transition: all 0.5s ease !important;
+    -o-transition: all 0.5s ease !important;
+    -ms-transition: all 0.5s ease !important;
+    transition: all 0.5s ease !important;
+    }
+
+    /*****Mobile menu **********/
+    /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    right: 0;  
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: fixed;
+    right: 0;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.7s;
+    animation-name: slideIn;
+    animation-duration: 0.7s
+  }
+  
+  /* The Close Button */
+  .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-body {padding: 2px 16px;}
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {right: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {right: -300px; opacity: 0}
+    to {right: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+    /**************** Show posts with shohortcode *************/
+    .post-main {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .post-article {
+        background: #fff 0% 0% no-repeat padding-box;
+        box-shadow: 0 4px 7px #0000001a;
+        border: 1px solid #eaeaea;
+        border-radius: 0 0 5px 5px;
+        opacity: 1;
+        width: 360px!important;
+        overflow: hidden;
+    }
+    
+    div#category-posts-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    article.category-post {
+        background: #fff 0% 0% no-repeat padding-box;
+        box-shadow: 0 4px 7px #0000001a;
+        border: 1px solid #eaeaea;
+        border-radius: 0 0 5px 5px;
+        opacity: 1;
+        width: 360px;
+        overflow: hidden;
+        margin-bottom: 60px;
+    }
+    article.category-post .entry-title
+    {
+        padding:10px;
+    }
+    button#load-more-btnd:hover {
+        cursor: pointer;
+    }
+    button#load-more-btnd {
+        color: #2ea3f2;
+        border: 2px solid #2ea3f2;
+        padding: 15px;
+        border-radius: 50px;
+        background: none;
+        font-size: 20px;
+        font-family: 'Gilroy ExtraBold',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: 400;
+    }
+    @media (max-width: 767px){
+    article.category-post { 
+        width: 168px;
+    }
+    button#load-more-btnd {
+        font-size: 14px;  
+    }
+    }
+	
+/*Hiding wagered,not-wagered,withdrawal menu after login*/
+
+.wagerd_balance, .not_wagered_balance, .withdrawable_balance{
+	display: none;
+}
+
+.play_balance{
+    padding: 8px 0;
+    color: #e6a0cf;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+span#playBalance{
+	color: #ffffff!important;
+	display: inline-block;
+    padding-left: 5px;
+}	
+
+
