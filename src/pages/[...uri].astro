@@ -7,6 +7,7 @@ import Single from "../components/templates/Single.astro";
 import SingleNewsArticle from "../components/templates/SingleNewsArticle.astro";
 import SingleGamePage from "../components/templates/SingleGamePage.astro";
 import NewsArchiveCategory from "../components/templates/NewsArchiveCategory.astro";
+import SingleCasinoSchool from "../components/templates/SingleCasinoSchool.astro";
 import { getNodeByURI, getAllUris } from "../lib/api";
 const uri = `/${Astro.params.uri}/`;
 const data = await getNodeByURI(uri);
@@ -52,7 +53,13 @@ function resolveContentTemplate(node){
             break; 
             
         case 'Page':
-            template = Single;
+
+            if(uri.includes('casino-school')){
+                template = SingleCasinoSchool;
+            }
+            else{
+                template = Single;
+            }
             break; 
         
         case 'Tag':

@@ -181,7 +181,7 @@ export async function getAllUris() {
                 uri
               }
             }
-            pages(first: 100) {
+            pages(first: 1000) {
               nodes {
                 uri
               }
@@ -202,6 +202,8 @@ export async function getAllUris() {
 
     const { data } = await response.json();
 
+    //console.log(data.pages);
+
     // Extract post URIs and add them to the uris array
     const postNodes = data.posts.nodes || [];
     uris = uris.concat(postNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
@@ -209,6 +211,10 @@ export async function getAllUris() {
     // Extract category URIs and add them to the uris array
     const categoryNodes = data.categories.nodes || [];
     uris = uris.concat(categoryNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
+
+    // Extract pages URIs and add them to the uris array
+     const pageNodes = data.pages.nodes || [];
+    uris = uris.concat(pageNodes.map((node) => ({ params: { uri: trimURI(node.uri) } }))); 
 
     // Update the cursor for the next page
     postCursor = data.posts.pageInfo.hasNextPage ? data.posts.pageInfo.endCursor : null;
