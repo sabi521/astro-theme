@@ -961,27 +961,27 @@ header .header-background {
 	
 
 h1{
-	font-size:32px!important;}
+	font-size:32px;}
 
 h2
 {
-	font-size:26px!important;
+	font-size:26px;
 }
 h3
 {
-	font-size:22px!important;
+	font-size:22px;
 }
 h4
 {
-	font-size:18px!important;
+	font-size:18px;
 }
 h5
 {
-	font-size:16px!important;
+	font-size:16px;
 }
 h6
 {
-	font-size:14px!important;
+	font-size:14px;
 }
 }
 
@@ -1153,7 +1153,7 @@ a#usd-btn {
 }
 
 /******************Updated footer ***********************/
-footer .et_builder_inner_content.et_pb_gutters3 {
+/* footer .et_builder_inner_content.et_pb_gutters3 {
     background: #3C0845;
 }
 .sp-ft-section-logos
@@ -1177,9 +1177,6 @@ footer .et_builder_inner_content.et_pb_gutters3 {
 }
 .sp-ft-section-logos::-webkit-scrollbar {
     display: none;
-    /* background: #00000061; */
-    /* width: 8px; */
-    /* height: 4px; */
 }
 .sp-ft-section-logos {
     scrollbar-width: none;
@@ -1199,11 +1196,11 @@ div#promo-ft-link {
 .sp-footer-text p{
 	font-family: 'Gilroy-Regular',Helvetica,Arial,Lucida,sans-serif;
     font-size: 14px;
-}
+} */
 
 /* Logos scroller */
 
-.sp-ft-logos-row .slick-slide {
+/* .sp-ft-logos-row .slick-slide {
     height: auto !important;
 }
 .sp-ft-logos-row .et_pb_module.et_pb_image {
@@ -1289,12 +1286,12 @@ button#slide-left:hover {
 .sp-arrow-row {
     display: inline-block;
     width: 26px;
-}
+} */
 /***************header *****************/
 
 /* Game Category Grid, July 11, 2022. @jenny*/
 
-body.archive.category.category-games .et_pb_blog_grid .et_pb_post {
+/* body.archive.category.category-games .et_pb_blog_grid .et_pb_post {
     border: 0px;
 }
     
@@ -1323,7 +1320,7 @@ body.archive.category.category-games .current-cat {
 .et-blog-css-grid .et_pb_post .entry-featured-image-url {
     margin-bottom: 10px;
 }
-
+ */
 
 
 
@@ -1343,7 +1340,7 @@ div.wpcr3_review div.wpcr3_review_title {
 
 
 /****menu ***/
-.img-wrap{
+/* .img-wrap{
     background-position:center !important;
     height: 100vh;
 }
@@ -1386,7 +1383,7 @@ div.wpcr3_review div.wpcr3_review_title {
     top: -44px;
 	font-size:22px;
 	
-}
+} */
 
 /* .footer-lg {
     margin-bottom: 0;
@@ -2024,7 +2021,7 @@ Css for astro site
 
 **/
 
-.casino_single_container .page-nav li a {
+.casino_school_main .page-nav li a {
     color: #2F0536 !important;
    
 }
