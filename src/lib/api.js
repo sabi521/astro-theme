@@ -275,9 +275,6 @@ export async function getAllUris() {
 
     const { data } = await response.json();
 
-    //console.log(data.pages);
-    //console.log(data.allBasepress.nodes[0].sectionsBasepress);
-
     // Extract post URIs and add them to the uris array
     const postNodes = data.posts.nodes || [];
     uris = uris.concat(postNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
@@ -287,8 +284,17 @@ export async function getAllUris() {
     uris = uris.concat(categoryNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
 
     // Extract pages URIs and add them to the uris array
-     const pageNodes = data.pages.nodes || [];
-    uris = uris.concat(pageNodes.map((node) => ({ params: { uri: trimURI(node.uri) } }))); 
+    /* const pageNodes = data.pages.nodes || [];
+    uris = uris.concat(pageNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));  */
+
+    // Extract pages URIs and add them to the uris array
+const pageNodes = data.pages.nodes || [];
+uris = uris.concat(
+  pageNodes
+    .map((node) => trimURI(node.uri)) // Extract URIs
+    .filter((uri) => uri && uri !== '/') // Filter out empty or invalid URIs
+    .map((uri) => ({ params: { uri } }))
+);
 
     // Extract Basepress URIs and add them to the uris array
     const basepressNodes = data.allBasepress.nodes|| [];
@@ -303,8 +309,13 @@ export async function getAllUris() {
         }))
       );
     }, []);
-    uris = uris.concat(basepressSectionNodes);
-
+    
+    // Filter out empty or invalid URIs before adding them to the uris array
+    basepressSectionNodes.forEach((node) => {
+      if (node.params.uri && node.params.uri !== "/") {
+        uris.push(node);
+      }
+    });
 
     // Update the cursor for the next page
     postCursor = data.posts.pageInfo.hasNextPage ? data.posts.pageInfo.endCursor : null;
@@ -312,6 +323,7 @@ export async function getAllUris() {
 
   return uris;
 }
+
 
 // Function to trim URI
 function trimURI(uri) {
