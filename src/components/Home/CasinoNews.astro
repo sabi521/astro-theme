@@ -68,7 +68,7 @@ const posts = postData.data.posts.edges;
     <div class="casino_news_left_block col-span-5 md:col-span-3">
       {
         posts.slice(0, 1).map((post: any) => (
-          <div class="left_block" key={post.node.link}>
+          <div class="left_block">
             <article class="">
               <a class="mb-5" href={post.node.link}>
                 {post.node.featuredImage?.node ? (
