@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "serve" : "node ./run-server.mjs",
+    "serve": "node ./run-server.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
