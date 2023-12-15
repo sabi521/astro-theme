@@ -42,14 +42,17 @@ const items = data.sectionsBasepress.edges;
           </summary>
 
           {item.node.basepress.edges.length > 0 && (
-            <p class="text-neutral-600 my-2 group-open:animate-fadeIn bg-white p-2 ml-2">
+            <p class="text-neutral-600 my-2 group-open:animate-fadeIn bg-white p-2 ml-2 ">
               {item.node.basepress.edges.map((subitem) => (
-                <span class="flex space-x-1 mb-3">
+                <a
+                  href={subitem.node.uri}
+                  class="flex space-x-1 mb-1 hover:bg-[#eee] p-2"
+                >
                   <i class="fa text-gray-400 pr-1 pt-1 block">&#xf059;</i>
                   <span class="bpress-nav-item-title">
                     {subitem.node.title}
                   </span>
-                </span>
+                </a>
               ))}
             </p>
           )}

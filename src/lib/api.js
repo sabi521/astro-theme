@@ -85,6 +85,7 @@ export async function GuideSidebar(){
                     edges {
                       node {
                         title
+                        uri
                       }
                     }
                   }

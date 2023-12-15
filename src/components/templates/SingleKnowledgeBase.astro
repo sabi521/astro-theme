@@ -1,5 +1,5 @@
 ---
-import CasinoSchoolSidebar from "../CasinoSchoolSidebar.astro";
+import CasinoGuideSidebar from "../CasinoGuideSidebar.astro";
 const { node } = Astro.props;
 
 const uriParts = node.uri.split("/");
@@ -46,7 +46,7 @@ const guidesCategory = guidesCat.replace(/-/g, " ");
         class="casino_single_container mt-10 font-giloryRegular font-semibold"
       >
         <div class="inner_container flex flex-col md:flex-row justify-between">
-          <CasinoSchoolSidebar />
+          <CasinoGuideSidebar />
           <div class="content-container w-full md:w-3/5 mt-5 md:mt-0">
             <h1 class="text-[#ff688b] font-giloryExtrabold">{node.title}</h1>
             <article set:html={node.content} />
