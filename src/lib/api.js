@@ -70,6 +70,38 @@
   return data;
 } */
 
+
+export async function GuideSidebar(){
+  const response = await fetch("https://slotsstg.wpengine.com/graphql", {
+      method: 'post', 
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+          query: `query GuideSidebar {
+            sectionsBasepress(first: 100) {
+              edges {
+                node {
+                  name
+                  basepress(first: 100) {
+                    edges {
+                      node {
+                        title
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          `
+      })
+  });
+  const{ data } = await response.json();
+  return data;
+}
+
+
+
+
 export async function CasinoGuidesArticles(){
   const response = await fetch("https://slotsstg.wpengine.com/graphql", {
       method: 'post', 

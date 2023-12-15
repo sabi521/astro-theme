@@ -31,8 +31,8 @@ export async function getStaticPaths({ paginate }) {
     `,
   });
 
-  const allPosts = data.posts.edges; // Extract the array of posts
-  //console.log(allPosts);
+  const allPosts = data.posts.edges;
+  //console.log("All Posts:", allPosts); // Log the fetched data
 
   return paginate(allPosts, {
     pageSize: 20,
@@ -88,7 +88,7 @@ const { page } = Astro.props;
               src={post.node.featuredImage.node.sourceUrl}
               alt={post.node.featuredImage.node.altText}
               excerpt={post.node.excerpt}
-              slug={post.node.slug}
+              slug={post.node.slug || ""}
               uri={post.node.uri}
             />
           ))
