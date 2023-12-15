@@ -11,47 +11,6 @@ const items = data.sectionsBasepress.edges;
 //console.log(subitems);
 ---
 
-<!-- <aside
-  class="bpress-sidebar bpress-float-right menu_container bg-[#eee] h-max rounded-lg p-6 w-full md:w-1/4"
-  role="complementary"
->
-  <div class="hide-scrollbars">
-    <section
-      id="basepress_nav_widget-2"
-      class="widget widget_basepress_nav_widget"
-    >
-      <div id="guide_container">
-        {
-          items.map((item) => (
-            <ul class="bpress-nav-accordion">
-              <li class="bpress-nav-section list-none cursor-pointer mb-3">
-                <span class="bpress-nav-item flex space-x-2">
-                  <i class="fa italic block text-lg">&#xf02d;</i>
-                  <span class="bpress-nav-item-title block">
-                    {" "}
-                    {item.node.name}
-                  </span>
-                </span>
-                {item.node.basepress.edges.length > 0 && (
-                  <ul class="children py-2 px-2 mt-1">
-                    {item.node.basepress.edges.map((subitem) => (
-                      <li class="bpress-nav-article mb-2 flex space-x-1">
-                        <i class="fa text-gray-400 pr-1 pt-1 block">&#xf059;</i>
-                        <span class="bpress-nav-item-title">
-                          {subitem.node.title}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            </ul>
-          ))
-        }
-      </div>
-    </section>
-  </div>
-</aside> -->
 <aside
   class="bpress-sidebar bpress-float-right menu_container bg-[#eee] h-max rounded-lg p-6 w-full md:w-1/4"
 >
