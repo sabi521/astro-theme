@@ -277,11 +277,21 @@ export async function getAllUris() {
 
     // Extract post URIs and add them to the uris array
     const postNodes = data.posts.nodes || [];
-    uris = uris.concat(postNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
+    uris = uris.concat(
+      postNodes
+        .map((node) => trimURI(node.uri)) // Extract URIs
+        .filter((uri) => uri && uri !== '/') // Filter out empty or invalid URIs
+        .map((uri) => ({ params: { uri } }))
+    );
 
     // Extract category URIs and add them to the uris array
     const categoryNodes = data.categories.nodes || [];
-    uris = uris.concat(categoryNodes.map((node) => ({ params: { uri: trimURI(node.uri) } })));
+    uris = uris.concat(
+      categoryNodes
+        .map((node) => trimURI(node.uri)) // Extract URIs
+        .filter((uri) => uri && uri !== '/') // Filter out empty or invalid URIs
+        .map((uri) => ({ params: { uri } }))
+    );
 
     // Extract pages URIs and add them to the uris array
     /* const pageNodes = data.pages.nodes || [];
