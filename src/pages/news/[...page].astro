@@ -91,7 +91,6 @@ const { page } = Astro.props;
               excerpt={post.node.excerpt}
               slug={post.node.slug || ""}
               uri={post.node.uri}
-              client:only
             />
           ))
         ) : (
