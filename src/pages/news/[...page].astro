@@ -1,6 +1,6 @@
 ---
 //import type { GetStaticPaths } from "astro";
-export const prerender = true;
+//export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import NewsPostCategory from "../../components/NewsPostCategory.astro";
 import { wpquery } from "../../data/wordpress";
@@ -42,6 +42,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 
 //console.log(page);
+//https://docs.astro.build/en/reference/api-reference/#the-pagination-page-prop
 ---
 
 <Layout title="News">
@@ -90,6 +91,7 @@ const { page } = Astro.props;
               excerpt={post.node.excerpt}
               slug={post.node.slug || ""}
               uri={post.node.uri}
+              client:only
             />
           ))
         ) : (
