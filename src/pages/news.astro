@@ -91,6 +91,13 @@ import Layout from "../layouts/Layout.astro";
       previousButton.style.display = hasPreviousPage ? "block" : "none";
     };
 
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // You can change this to "auto" for instant scroll
+      });
+    };
+
     const fetchNextPosts = async () => {
       const response = await fetch("https://slotsstg.wpengine.com/graphql", {
         method: "POST",
@@ -133,7 +140,7 @@ import Layout from "../layouts/Layout.astro";
       });
 
       const newData = await response.json();
-      console.log(newData);
+      //console.log(newData);
 
       renderPosts(newData.data.posts.edges);
 
@@ -146,6 +153,8 @@ import Layout from "../layouts/Layout.astro";
       updatePreviousButtonVisibility(
         newData.data.posts.pageInfo.hasPreviousPage
       );
+
+      scrollToTop();
     };
 
     //query to fetch previous posts
@@ -200,6 +209,8 @@ import Layout from "../layouts/Layout.astro";
       updatePreviousButtonVisibility(
         newData.data.posts.pageInfo.hasPreviousPage
       );
+
+      scrollToTop();
     };
 
     // Fetch and render posts on page load
