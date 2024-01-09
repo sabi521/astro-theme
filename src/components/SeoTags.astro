@@ -3,6 +3,11 @@ import { seoNodeByURI } from "../lib/seo";
 const uri = `/${Astro.params.uri}/`;
 const data = await seoNodeByURI(uri);
 //console.log("hello", data.nodeByUri.seo);
+//const node = data.nodeByUri;
+//console.log(node);
+
+//console.log(data);
+
 
 const seo = data.nodeByUri && data.nodeByUri.seo ? data.nodeByUri.seo : null;
 

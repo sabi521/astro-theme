@@ -71,6 +71,7 @@
 } */
 
 
+
 export async function GuideSidebar(){
   const response = await fetch("https://slotsstg.wpengine.com/graphql", {
       method: 'post', 
@@ -177,6 +178,34 @@ export async function getNodeByURI(uri){
                     }
                   }
                 }
+                seo {
+                  opengraphSiteName
+                  breadcrumbs {
+                    text
+                    url
+                  }
+                  opengraphUrl
+                  canonical
+                  metaDesc
+                  title
+                  opengraphDescription
+                  opengraphPublishedTime
+                  opengraphModifiedTime
+                  opengraphImage {
+                    sourceUrl
+                    mimeType
+                    author {
+                      node {
+                        name
+                      }
+                    }
+                  }
+                  opengraphType
+                  readingTime
+                  schema {
+                    raw
+                  }
+                }
               }
               ... on Page {
                 id
@@ -185,6 +214,34 @@ export async function getNodeByURI(uri){
                 slug
                 date
                 content
+                seo {
+                  opengraphSiteName
+                  breadcrumbs {
+                    text
+                    url
+                  }
+                  opengraphUrl
+                  canonical
+                  metaDesc
+                  title
+                  opengraphDescription
+                  opengraphPublishedTime
+                  opengraphModifiedTime
+                  opengraphImage {
+                    sourceUrl
+                    mimeType
+                    author {
+                      node {
+                        name
+                      }
+                    }
+                  }
+                  opengraphType
+                  readingTime
+                  schema {
+                    raw
+                  }
+                }
               }
               ... on Category {
                 id
@@ -209,7 +266,40 @@ export async function getNodeByURI(uri){
                           }
                         }
                       }
+                      seo {
+                        breadcrumbs {
+                          text
+                          url
+                        }
+                      }
                     }
+                  }
+                }
+                seo {
+                  opengraphSiteName
+                  breadcrumbs {
+                    text
+                    url
+                  }
+                  opengraphUrl
+                  canonical
+                  metaDesc
+                  title
+                  opengraphDescription
+                  opengraphPublishedTime
+                  opengraphModifiedTime
+                  opengraphImage {
+                    sourceUrl
+                    mimeType
+                    author {
+                      node {
+                        name
+                      }
+                    }
+                  }
+                  opengraphType
+                  schema {
+                    raw
                   }
                 }
               }
@@ -219,6 +309,34 @@ export async function getNodeByURI(uri){
                 uri
                 slug
                 content
+                seo {
+                  opengraphSiteName
+                  breadcrumbs {
+                    text
+                    url
+                  }
+                  opengraphUrl
+                  canonical
+                  metaDesc
+                  title
+                  opengraphDescription
+                  opengraphPublishedTime
+                  opengraphModifiedTime
+                  opengraphImage {
+                    sourceUrl
+                    mimeType
+                    author {
+                      node {
+                        name
+                      }
+                    }
+                  }
+                  opengraphType
+                  readingTime
+                  schema {
+                    raw
+                  }
+                }
               }
               ... on SectionBasepress {
                 id
@@ -230,6 +348,33 @@ export async function getNodeByURI(uri){
                       title
                       uri
                     }
+                  }
+                }
+                seo {
+                  opengraphSiteName
+                  breadcrumbs {
+                    text
+                    url
+                  }
+                  opengraphUrl
+                  canonical
+                  metaDesc
+                  title
+                  opengraphDescription
+                  opengraphPublishedTime
+                  opengraphModifiedTime
+                  opengraphImage {
+                    sourceUrl
+                    mimeType
+                    author {
+                      node {
+                        name
+                      }
+                    }
+                  }
+                  opengraphType
+                  schema {
+                    raw
                   }
                 }
               }
