@@ -1,0 +1,48 @@
+---
+/* import { wpquery } from "../data/wordpress";
+
+const searchBar = await wpquery({
+  query: `
+  query BaseSearch {
+  page(id: "406", idType: DATABASE_ID) {
+    id
+    basepressSearchBar {
+      basepressSearch
+      fieldGroupName
+    }
+  }
+}
+  `,
+});
+
+console.log(searchBar.page.basepressSearchBar.basepressSearch); */
+---
+
+<!-- <div>{searchBar.page.basepressSearchBar.basepressSearch}</div> -->
+<div id="shortcode-container" class="text-black"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ajaxurl = "https://slotsstg.wpengine.com/wp-admin/admin-ajax.php";
+
+    // Make the AJAX request
+    fetch(ajaxurl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      },
+      body: "action=search_shortcode_html",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // Update the content of the container with the shortcode result
+          document.getElementById("shortcode-container").innerHTML = data.data;
+        }
+      })
+      .catch((error) => {
+        // Handle fetch errors
+        console.error("Fetch error:", error);
+      });
+  });
+</script>
