@@ -2,7 +2,7 @@
 import Navigation from "./Navigation.astro";
 ---
 
-<header class="new-nav-header">
+<header class="new-nav-header fixed min-w-full bg-white z-50 top-0">
   <div class="header-section">
     <ul
       class="promos flex justify-center items-center space-x-6 py-4 border-b-[1px]"
@@ -12,9 +12,8 @@ import Navigation from "./Navigation.astro";
           src="https://slotsparadise.com/wp-content/themes/slotsparadise/images/star-ico.svg"
           alt="star icon"
         />
-        <a
-          href="https://slotspressdev.wpengine.com/promotions"
-          class="font-medium text-[#FD106A] text-xl">PROMOTIONS</a
+        <a href="/promotions" class="font-medium text-[#FD106A] text-xl"
+          >PROMOTIONS</a
         >
       </li>
       <li class="flex space-x-1">

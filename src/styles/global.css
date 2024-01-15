@@ -1606,8 +1606,39 @@ Css for astro site
 
 **/
 
+main {
+    margin-top: 208px;
+}
+
 .casino_school_main .page-nav li a {
     color: #2F0536 !important;
    
 }
 
+/** basepress search astro **/
+
+.bpress-search {
+    position: relative;
+    height: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bpress-search-form {
+    position: relative;
+    height: 100%;
+}
+
+input[type="text"].bpress-search-field {
+    display: block;
+    max-width: 600px;
+    margin: 20px auto;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    background-color: #fafafa;
+    font-size: inherit;
+  }
+
+  
