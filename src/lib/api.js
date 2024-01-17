@@ -308,6 +308,8 @@ export async function getNodeByURI(uri){
                 title
                 uri
                 slug
+                date
+                databaseId
                 content
                 seo {
                   opengraphSiteName

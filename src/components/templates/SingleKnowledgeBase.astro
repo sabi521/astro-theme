@@ -1,7 +1,12 @@
 ---
 import CasinoGuideSidebar from "../CasinoGuideSidebar.astro";
 import SearchWidget from "../SearchWidget.astro";
+import { formatDate } from "../../scripts/utils";
 const { node } = Astro.props;
+
+//console.log(node.databaseId);
+
+var postId = node.databaseId;
 
 const uriParts = node.uri.split("/");
 // Get the second-to-last value for guides categories
@@ -30,7 +35,7 @@ const guidesCategory = guidesCat.replace(/-/g, " ");
   <div
     class="casino_school_main max-w-[1200px] w-4/5 mx-auto px-2 mt-10 font-giloryRegular"
   >
-    <div class="post-bread font-semibold">
+    <div class="post-bread font-semibold text-[#555]">
       <div class="">
         <p>
           <span
@@ -54,6 +59,18 @@ const guidesCategory = guidesCat.replace(/-/g, " ");
           <CasinoGuideSidebar />
           <div class="content-container w-full md:w-[70%] mt-5 md:mt-0">
             <h1 class="text-[#ff688b] font-giloryExtrabold">{node.title}</h1>
+            <div class="bpress-post-meta text-[#777] text-sm mb-4 opacity-70">
+              <span class="bpress-post-views inline-block mr-4"
+                ><span class="bp-eye inline-block mr-1"
+                  ><i class="fa-solid fa-eye"></i></span
+                ><span id="view-container"></span></span
+              >
+              <span class="bpress-post-date inline-block mr-4"
+                ><span class="bp-clock inline-block mr-1"
+                  ><i class="fa-solid fa-clock"></i></span
+                >{formatDate(node.date)}</span
+              >
+            </div>
             <article set:html={node.content} />
           </div>
         </div>
@@ -61,3 +78,22 @@ const guidesCategory = guidesCat.replace(/-/g, " ");
     </div>
   </div>
 </div>
+
+<script define:vars={{ postId }}>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ajaxurl = "https://slotsstg.wpengine.com/wp-admin/admin-ajax.php";
+    // Make the AJAX request
+    fetch(ajaxurl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      },
+      body: `action=display_basepress_views&databaseId=${postId}`,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        //console.log(data); // Log the data received from the server
+        document.getElementById("view-container").innerHTML = data;
+      });
+  });
+</script>

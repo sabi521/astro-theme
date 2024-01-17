@@ -14,11 +14,8 @@
     })
       .then((response) => response.text())
       .then((data) => {
-        // Remove the trailing "0" from the response
-        const sanitizedData = data.trim().replace(/0$/, "");
-
         // Update the content of the container with the sanitized result
-        document.getElementById("search-container").innerHTML = sanitizedData;
+        document.getElementById("search-container").innerHTML = data;
       })
       .catch((error) => {
         // Handle fetch errors

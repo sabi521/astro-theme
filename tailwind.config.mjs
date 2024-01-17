@@ -28,7 +28,7 @@ export default {
 			  },
 			  backgroundColor: {
 				'custom-pink': '#ea94a8',
-			  },
+			  }
 		},
 	},
 	plugins: [],
