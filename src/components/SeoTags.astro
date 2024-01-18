@@ -1,15 +1,25 @@
 ---
-import { seoNodeByURI } from "../lib/seo";
-const uri = `/${Astro.params.uri}/`;
+import { seoNodeByURI } from '../lib/seo';
+
+// Check if Astro.params.uri is defined
+const isDefinedUri = Astro.params.uri !== undefined;
+
+// Set the URI based on whether it's defined or not
+const uri = isDefinedUri
+  ? `/${Astro.params.uri}/`
+  : `/${Astro.request.url.split('/').filter(Boolean).pop() || ''}/`;
+
+console.log(uri);
+console.log(Astro.request.url);
+
 const data = await seoNodeByURI(uri);
-//console.log("hello", data.nodeByUri.seo);
-//const node = data.nodeByUri;
+//console.log(data);  
+
+const node = data.nodeByUri && data.nodeByUri.seo ? data.nodeByUri : null;
+
 //console.log(node);
 
-//console.log(data);
-
-
-const seo = data.nodeByUri && data.nodeByUri.seo ? data.nodeByUri.seo : null;
+const seo = node ? node.seo : null;
 
 //console.log(seo);
 ---

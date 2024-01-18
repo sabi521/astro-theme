@@ -6,7 +6,11 @@ import { CasinoGuidesArticles } from "../lib/api";
 import SearchWidget from "../components/SearchWidget.astro";
 
 const data = await CasinoGuidesArticles();
+
+//console.log(data);
 const sections = data.sectionsBasepress.edges;
+
+//console.log(sections);
 ---
 
 <Layout title="Online Casino Guides">

@@ -138,6 +138,40 @@ export async function seoNodeByURI(uri){
                     }
                   }
                 }
+
+                ... on Basepress {
+                  id
+                  title
+                  uri
+                  seo {
+                    opengraphSiteName
+                    breadcrumbs {
+                      text
+                      url
+                    }
+                    opengraphUrl
+                    canonical
+                    metaDesc
+                    title
+                    opengraphDescription
+                    opengraphPublishedTime
+                    opengraphModifiedTime
+                    opengraphImage {
+                      sourceUrl
+                      mimeType
+                      author {
+                        node {
+                          name
+                        }
+                      }
+                    }
+                    opengraphType
+                    readingTime
+                    schema {
+                      raw
+                    }
+                  }
+                }
                 ... on SectionBasepress {
                   id
                   name
