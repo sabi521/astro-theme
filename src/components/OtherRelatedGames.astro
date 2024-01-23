@@ -1,0 +1,21 @@
+<div id="other_related_container"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ajaxurl = "https://slotsstg.wpengine.com/wp-admin/admin-ajax.php";
+
+    // Make the AJAX request with individual attribute values
+    fetch(ajaxurl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      },
+      body: "action=other_realted_games",
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        // Set the response as the content of the #review-container
+        document.getElementById("other_related_container").innerHTML = data;
+      });
+  });
+</script>

@@ -1,8 +1,12 @@
 ---
-//console.log(lastPart);
+const fullUrl = Astro.request.url;
+const segments = fullUrl.split("/");
+const slug = segments[segments.length - 2];
 
-const query = `query GetPostsBySlug {
-  posts(where: {name: "burning-aces-jackpot-game"}) {
+//console.log(slug);
+
+const query = `query GetPostsBySlug($slug: String!) {
+  posts(where: { name: $slug }) {
     edges {
       node {
         slug
@@ -17,26 +21,85 @@ const query = `query GetPostsBySlug {
   }
 }`;
 
+const variables = {
+  slug: slug,
+};
+
 const response = await fetch(`https://slotsstg.wpengine.com/graphql`, {
   method: "POST",
   headers: {
     "content-type": "application/json",
   },
-  body: JSON.stringify({ query }),
+  body: JSON.stringify({ query, variables }),
 }).then((response) => response.json());
 
-//console.log(response);
-const posts = response.data.posts.edges;
+let originalContentValue;
+
+// Check if the response has the expected structure
+if (
+  response.data &&
+  response.data.posts &&
+  response.data.posts.edges &&
+  response.data.posts.edges.length > 0 &&
+  response.data.posts.edges[0].node.blocks
+) {
+  const firstBlock = response.data.posts.edges[0].node.blocks.find(
+    (block) => block.originalContent
+  );
+
+  if (firstBlock) {
+    originalContentValue = firstBlock.originalContent;
+    console.log(originalContentValue);
+  } else {
+    console.error("No block with originalContent found");
+  }
+} else {
+  console.error("Invalid response structure or missing data");
+}
 ---
 
-<!-- Your container to display the shortcode result -->{
-  posts.map((post) => {
-    const firstDynamicBlock = post.node.blocks.find(
-      (block) => block.originalContent
-    );
+<div id="review-container"></div>
 
-    if (firstDynamicBlock) {
-      return <div>{firstDynamicBlock.originalContent}</div>;
+<script define:vars={{ originalContentValue }}>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ajaxurl = "https://slotsstg.wpengine.com/wp-admin/admin-ajax.php";
+
+    // Custom parser function to extract attributes
+    function parseOriginalContentValue(originalContent) {
+      const matches = originalContent.match(/(\w+)="([^"]+)"/g);
+      const attributes = {};
+
+      if (matches) {
+        matches.forEach((match) => {
+          const [key, value] = match.split("=");
+          attributes[key] = value.replace(/"/g, "");
+        });
+      }
+
+      return attributes;
     }
-  })
-}
+
+    try {
+      // Extract attribute values using the custom parser
+      const { demo, play, graphics, features, gameplay, value } =
+        parseOriginalContentValue(originalContentValue);
+
+      // Make the AJAX request with individual attribute values
+      fetch(ajaxurl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        },
+        body: `action=display_reviews_sidebar&demo=${demo}&play=${play}&graphics=${graphics}&features=${features}&gameplay=${gameplay}&value=${value}`,
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          // Set the response as the content of the #review-container
+          document.getElementById("review-container").innerHTML = data;
+        });
+    } catch (error) {
+      // Log the error to the console
+      console.error("Error parsing originalContentValue:", error);
+    }
+  });
+</script>
