@@ -1,4 +1,5 @@
 ---
+import SocialShare from "../components/SocialShare.astro";
 const fullUrl = Astro.request.url;
 const segments = fullUrl.split("/");
 const slug = segments[segments.length - 2];
@@ -49,16 +50,81 @@ if (
 
   if (firstBlock) {
     originalContentValue = firstBlock.originalContent;
-    console.log(originalContentValue);
+    //console.log(originalContentValue);
   } else {
     console.error("No block with originalContent found");
   }
-} else {
-  console.error("Invalid response structure or missing data");
 }
+
+/** create a function to extratct the value of demo and play from the shortcode
+ * [gameplay demo="https://slotsstg.wpengine.com/demo/frame/16338/Sante" play="https://slotsstg.wpengine.com/real/frame/16338/Sante" graphics="86" features="90" gameplay="88" value="87"]
+ */
+function extractDemoAndPlay(originalContentValue) {
+  try {
+    // Extracting demo and play values using regular expressions
+    const demoMatch = originalContentValue.match(/demo="([^"]+)"/);
+    const playMatch = originalContentValue.match(/play="([^"]+)"/);
+
+    // Check if matches were found
+    if (demoMatch && playMatch) {
+      const demoUrl = demoMatch[1];
+      const playUrl = playMatch[1];
+
+      return { demo: demoUrl, play: playUrl };
+    } else {
+      console.error(
+        "Could not find demo and play values in originalContentValue"
+      );
+      return null;
+    }
+  } catch (error) {
+    console.error("Error extracting demo and play values:", error);
+    return null;
+  }
+}
+
+const { demo, play } = extractDemoAndPlay(originalContentValue);
+
+/* if (demo && play) {
+  console.log("Demo URL:", demo);
+  console.log("Play URL:", play);
+} else {
+  console.error("Failed to extract demo and play values");
+} */
 ---
 
 <div id="review-container"></div>
+
+<div class="rating-col flex gap-2">
+  <div
+    class="r-col-first bg-[#EFEFEF] w-[33%] block p-2 text-center relative rounded-l-[22px] h-16"
+  >
+    <p>Rating</p>
+    <div class="text-center" id="review_stars">
+      <img
+        src="https://slotsstg.wpengine.com/wp-content/themes/slotsparadise/images/stars-sprite-0.webp"
+        alt="star rating"
+        class="stars_rating mx-auto"
+      />
+    </div>
+  </div>
+  <div class="r-col-sec bg-[#EFEFEF] w-[33%] block p-2 text-center h-15">
+    <p>Reviews</p>
+    <span class="rvs_total"><strong id="rev_count">0</strong></span>
+  </div>
+  <div
+    class="r-col-third bg-[#EFEFEF] w-[33%] block p-2 text-center rounded-r-[22px] h-16"
+  >
+    <p>Share</p>
+    <div class="flex items-center justify-center h-5"><SocialShare /></div>
+  </div>
+</div>
+<p>
+  <a class="wid-btn btn-margin" href={demo}>DEMO</a>
+  <a class="wid-btn" href={play}>PLAY NOW</a>
+</p>
+
+<!--script to get the Quick overview section: Graphics, Features, Gameplay, Value -->
 
 <script define:vars={{ originalContentValue }}>
   document.addEventListener("DOMContentLoaded", function () {
@@ -81,7 +147,7 @@ if (
 
     try {
       // Extract attribute values using the custom parser
-      const { demo, play, graphics, features, gameplay, value } =
+      const { graphics, features, gameplay, value } =
         parseOriginalContentValue(originalContentValue);
 
       // Make the AJAX request with individual attribute values
@@ -90,7 +156,7 @@ if (
         headers: {
           "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
         },
-        body: `action=display_reviews_sidebar&demo=${demo}&play=${play}&graphics=${graphics}&features=${features}&gameplay=${gameplay}&value=${value}`,
+        body: `action=display_reviews_sidebar&graphics=${graphics}&features=${features}&gameplay=${gameplay}&value=${value}`,
       })
         .then((response) => response.text())
         .then((data) => {
@@ -100,6 +166,34 @@ if (
     } catch (error) {
       // Log the error to the console
       console.error("Error parsing originalContentValue:", error);
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let aggRating = document.querySelector(
+      ".wpcr3_aggregateRating_ratingValue"
+    );
+    let reviewStarsElement = document.getElementById("review_stars");
+
+    // Get the element with the class "wpcr3_aggregateRating_reviewCount"
+    let reviewCountElement = document.querySelector(
+      ".wpcr3_aggregateRating_reviewCount"
+    );
+
+    // Extract the numeric part using a regular expression
+    let numericReviewCount = reviewCountElement
+      ? reviewCountElement.innerHTML.match(/\d+/)
+      : null;
+
+    // Update the element with the ID "rev_count" with the extracted numeric value
+    document.getElementById("rev_count").innerHTML = numericReviewCount
+      ? numericReviewCount[0]
+      : "0";
+
+    if (aggRating) {
+      reviewStarsElement.innerHTML = aggRating.innerHTML;
     }
   });
 </script>
