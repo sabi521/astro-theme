@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6
     /*margin-top: -85px !important;*/
 	margin-top: 0 !important;
 }
-.col-first {
+/* .col-first {
     width: 31%;
     display: inline-block;
     margin-right: 1%;
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6
     border-radius: 0 22px 22px 0;
     padding: 8px;
     text-align: center;
-}
+} */
 .wid-btn {
     background: #A64485;
     padding: 12px 30px;

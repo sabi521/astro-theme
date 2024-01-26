@@ -27,6 +27,7 @@ const data = await wpquery({
             }
             title
             slug
+            uri
           }
         }
       }
@@ -46,6 +47,7 @@ const relatedPosts = postsByCat.filter(
 );
 
 //console.log(relatedPosts);
+//console.log(relatedPosts[0].node.featuredImage);
 ---
 
 <!-- <div id="other_related_container"></div>
@@ -76,7 +78,7 @@ const relatedPosts = postsByCat.filter(
     relatedPosts.map((post: any) => (
       <div class="">
         <div class="">
-          <a class="block rounded-lg overflow-hidden" href={post.node.link}>
+          <a class="block rounded-lg overflow-hidden" href={post.node.uri}>
             <Image
               class="w-full object-cover shadow-casinoNews"
               width="155"
@@ -88,7 +90,7 @@ const relatedPosts = postsByCat.filter(
           </a>
           <div class="">
             <p class="text-[#2F0536] font-giloryRegular font-semibold">
-              <a href="{post.node.link}">{post.node.title}</a>
+              <a href={post.node.uri}>{post.node.title}</a>
             </p>
           </div>
         </div>

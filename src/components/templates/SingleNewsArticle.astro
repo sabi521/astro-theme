@@ -1,7 +1,8 @@
 ---
 const { node } = Astro.props;
-import { Image } from "astro:assets";
 import SidebarArticles from "../SidebarArticles.astro";
+
+//console.log(node.seo.breadcrumbs);
 ---
 
 <div
@@ -13,16 +14,29 @@ import SidebarArticles from "../SidebarArticles.astro";
         {node.title}
       </h1>
 
-      <!-- <div class="post-bread font-semibold">
-                <div class=""><p><span><span><a href="https://slotsparadise.com/the-beach/">Home</a></span> &gt; 
-                    <span><a href="https://slotsparadise.com/the-beach/news/">News</a></span> &gt; 
-                    <span>{ node.categories ?
-                    node.categories.nodes.map(category => (<a class='term-link' href={category.uri}>{category.name}</a>)) :     
-                    null 
-                    }</span> &gt; 
-                    <span class="breadcrumb_last" aria-current="page"><strong>{node.title}</strong></span></span></p>
-                </div>
-            </div> -->
+      <div class="post-bread font-semibold">
+        <div class="">
+          <p>
+            <span
+              ><span
+                ><a href={node.seo.breadcrumbs[0].url}
+                  >{node.seo.breadcrumbs[0].text}</a
+                ></span
+              > &gt; <span
+                ><a href={node.seo.breadcrumbs[1].url}
+                  >{node.seo.breadcrumbs[1].text}</a
+                ></span
+              > &gt; <span class="" aria-current="page"
+                ><a href={node.seo.breadcrumbs[2].url}
+                  >{node.seo.breadcrumbs[2].text}</a
+                ></span
+              ></span
+            > &gt; <span class="" aria-current="page"
+              ><a href="">{node.seo.breadcrumbs[3].text}</a></span
+            >
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
