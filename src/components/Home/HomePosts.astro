@@ -39,7 +39,7 @@ const data = await wpquery({
     {
       data.posts.edges.map((post: any) => (
     <!-- Slides -->
-      <article class="home-slider-article swiper-slide rounded-[3px] bg-white shadow-homePosts overflow-hidden h-[283px]">
+      <article class="home-slider-article swiper-slide rounded-[3px] bg-white shadow-homePosts overflow-hidden h-[283px]" role="group">
         <a class="entry-featured-image-url mb-5" href={post.node.uri}>
           <Image
             class="games-Image reco w-full h-[228px]"
