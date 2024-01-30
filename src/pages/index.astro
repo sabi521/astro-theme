@@ -1,6 +1,5 @@
 ---
 export const prerender = true;
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import HomePosts from "../components/Home/HomePosts.astro";
 import CasinoNews from "../components/Home/CasinoNews.astro";
@@ -34,9 +33,10 @@ import WhySlots from "../components/Home/WhySlots.astro";
                 <a
                   href="https://slotsparadise.com/blackjack"
                   aria-label="blackjack"
+                  rel="prefetch"
                 >
                   <figure class="">
-                    <Image
+                    <img
                       class="w-full"
                       width="686"
                       height="386"
@@ -59,9 +59,13 @@ import WhySlots from "../components/Home/WhySlots.astro";
               <div
                 class="beach-home-game rounded-[20px] overflow-hidden text-center shadow-custom"
               >
-                <a href="https://slotsparadise.com/slots" aria-label="slots">
+                <a
+                  href="https://slotsparadise.com/slots"
+                  aria-label="slots"
+                  rel="prefetch"
+                >
                   <figure class="">
-                    <Image
+                    <img
                       class="w-full"
                       width="686"
                       height="386"
@@ -85,9 +89,10 @@ import WhySlots from "../components/Home/WhySlots.astro";
                 <a
                   href="https://slotsparadise.com/roulette"
                   aria-label="roulette"
+                  rel="prefetch"
                 >
                   <figure class="">
-                    <Image
+                    <img
                       class="w-full"
                       width="686"
                       height="386"
@@ -115,7 +120,7 @@ import WhySlots from "../components/Home/WhySlots.astro";
                   aria-label="table games"
                 >
                   <figure class="">
-                    <Image
+                    <img
                       class="w-full"
                       width="686"
                       height="386"
