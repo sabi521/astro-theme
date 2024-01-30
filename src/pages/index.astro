@@ -1,6 +1,5 @@
 ---
 export const prerender = true;
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import HomePosts from "../components/Home/HomePosts.astro";
 import CasinoNews from "../components/Home/CasinoNews.astro";
@@ -9,7 +8,6 @@ import Promos from "../components/Home/Promos.astro";
 import Recommend from "../components/Home/Recommend.astro";
 import Reviews from "../components/Reviews.astro";
 import WhySlots from "../components/Home/WhySlots.astro";
-import baccaratImage from "../assets/slots-baccarat.webp";
 ---
 
 <Layout
@@ -37,14 +35,12 @@ import baccaratImage from "../assets/slots-baccarat.webp";
                   aria-label="blackjack"
                 >
                   <figure class="">
-                    <Image
+                    <img
                       class="w-full"
                       width="686"
                       height="386"
                       src="https://slotspressdev.wpengine.com/the-beach/images/2023/10/slots-paradise-thebeach-blackjack.webp"
                       alt="blackjack image"
-                      loading="eager"
-                      format="avif"
                     />
                   </figure></a
                 >
