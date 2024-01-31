@@ -58,7 +58,7 @@ import {
 
 <div style="margin-top: 5px;">
   <span class="tooltip relative inline-block">
-    <a href="javascript:void(0)" class="copyLink block">
+    <a href="javascript:void(0)" class="copyLink block" aria-label="Copy Link">
       <svg
         class="w-[20px]"
         width="20"
@@ -90,6 +90,10 @@ import {
         button.addEventListener("click", copyPostLink);
       });
     }
+
+    document.querySelectorAll(".social-share-btn").forEach(function (btn) {
+      btn.setAttribute("aria-label", "Share button");
+    });
   });
   function copyPostLink(event) {
     event.preventDefault();
