@@ -73,11 +73,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /**************** Cutom css *****************************/
 
-h1, h2, h3, h4, h5, h6
+/* h1, h2, h3, h4, h5, h6
 {
 	font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif !important;
 	font-weight: normal !important;
-} 
+}  */
 
 
 /*** Widget *******/
@@ -299,11 +299,11 @@ ul#menu-footer-information li a {
     margin: 10px 0 auto;
     height: 34px;
 }
-.page-title {
+/* .page-title {
     padding-top: 60px;
     text-align: center !important;
 	    margin-bottom: 10px !important;
-}
+} */
   .game-table caption {
     font-size: 1.3em;
   }
@@ -497,11 +497,11 @@ background-color: #fff;
     border-radius: 0;
     color: #fff;
 }
-.page-title h1 {
+/* .page-title h1 {
     color: #fff;
     font-weight: 700;
     font-size: 32px;
-}
+} */
 /********** Casino guides *********/
 
 
@@ -616,9 +616,9 @@ footer #menu-games a{
 .casino-school-text {
     display: none;
 }
-.page-title h1 {
+/* .page-title h1 {
     font-size: 18px;
-}
+} */
 }
 
 @media screen and (max-width: 768px) {
