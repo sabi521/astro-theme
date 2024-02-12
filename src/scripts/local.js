@@ -179,6 +179,61 @@ const swiper2 = new Swiper('.swiper2', {
       prevEl: '.swiper-button-prev',
     }
   })
+
+  const swiper5 = new Swiper('.swiper5', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      400: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+  
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+  
+      1120: {
+        slidesPerView: 4,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      1400: {
+        slidesPerView: 5,
+        spaceBetween: 20
+      }
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  })
+
+  const swiper6 = new Swiper('.swiper6', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+      delay: 5000, // 5 seconds delay between each slide
+      disableOnInteraction: false // Do not stop autoplay on user interaction
+    },
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
 });
 
   
