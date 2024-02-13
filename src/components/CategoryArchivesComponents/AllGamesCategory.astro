@@ -1,39 +1,12 @@
 ---
-//import { wpquery } from "../../data/wordpress";
-import { Image } from "astro:assets";
-
-/* const data = await wpquery({
-  query: `
-  query GamesPage {
-  posts(first: 10, where: {categoryId: 61}) {
-    edges {
-      node {
-        title
-        slug
-        featuredImage {
-          node {
-            altText
-            title
-            sourceUrl
-          }
-        }
-        link
-        uri
-      }
-    }
-  }
-}
-  `,
-}); */
-
-//console.log(data);
+const { heading, categoryId } = Astro.props;
 ---
 
 <div class="swiper swiper4 py-2 my-12 mx-2">
   <div class="mb-4">
-    <h3 class="text-[#ff688b] text-3xl font-bold font-giloryExtrabold">
-      All Slots Games
-    </h3>
+    <h2 class="text-[#ff688b] text-3xl font-bold font-giloryExtrabold">
+      {heading}
+    </h2>
   </div>
   <!-- Additional required wrapper -->
   <div
@@ -49,7 +22,7 @@ import { Image } from "astro:assets";
   >
 </div>
 
-<script>
+<script define:vars={{ categoryId }}>
   let endCursor = null; // Track the current endCursor
 
   const fetchPosts = async () => {
@@ -62,7 +35,7 @@ import { Image } from "astro:assets";
         body: JSON.stringify({
           query: `
             query GamesPage($endCursor: String) {
-              posts(first: 20, where: {categoryId: 61}, after: $endCursor) {
+              posts(first: 20, where: {categoryId: ${categoryId}}, after: $endCursor) {
                 edges {
                   node {
                     title

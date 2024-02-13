@@ -2,10 +2,12 @@
 import { wpquery } from '../../data/wordpress';
 import { Image } from "astro:assets";
 
+const { tag_id } = Astro.props;
+
 const gameData = await wpquery({
   query: `
   query newGamesPage {
-  category(id: "61", idType: DATABASE_ID) {
+  category(id: "${tag_id}", idType: DATABASE_ID) {
     gamesCategoryIds {
       featuredGames
     }
