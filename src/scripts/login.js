@@ -11,23 +11,22 @@ setCookie("l_i", "gameId=1&id=104010", 1);
 
 
 
-// Function to delete a cookie
+/* // Function to delete a cookie
 function deleteCookie(cookieName) {
     document.cookie = cookieName + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
 }
 
 // Usage: delete the "l_i" cookie
-deleteCookie("l_i");
+deleteCookie("l_i"); */
 
 
 
 // Function to check cookies and update CSS
 function checkCookiesAndUpdateCSS() {
-    console.log("hello");
-    // Check if the "exampleCookie" cookie is present
+    //console.log("hello");
     console.log("Cookies:", document.cookie); // Log all cookies to check their names and values
     if (document.cookie.split(";").some((item) => item.trim().startsWith("l_i="))) {
-        console.log("second hello"); // Log if the condition is met
+        //console.log("second hello"); // Log if the condition is met
         
         // Update CSS properties for elements with class "modal"
         var modals = document.querySelectorAll(".modal");
@@ -61,9 +60,6 @@ function checkCookiesAndUpdateCSS() {
 
         // Update CSS property for elements with class "Menu--users"
         var menuUsers = document.querySelectorAll(".Menu--users");
-        /* menuUsers.forEach(function(menu) {
-            menu.style.display = "block";
-        }); */
 
         // Select the join_usd container
     var join_usd = document.querySelector(".join-usd-container");
@@ -81,7 +77,11 @@ function checkCookiesAndUpdateCSS() {
             menu.style.display = "none";
         });
     });
+
+    
     }
+
+    
 }
 
 // Call the function when the DOM is loaded
