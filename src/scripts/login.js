@@ -11,13 +11,13 @@ setCookie("l_i", "gameId=1&id=104010", 1);
 
 
 
-/* // Function to delete a cookie
+ // Function to delete a cookie
 function deleteCookie(cookieName) {
     document.cookie = cookieName + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
 }
 
 // Usage: delete the "l_i" cookie
-deleteCookie("l_i"); */
+deleteCookie("l_i");
 
 
 

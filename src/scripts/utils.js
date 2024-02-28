@@ -25,7 +25,7 @@ export function slugify(text) {
     // Define the options for formatting
     const options = {
       year: 'numeric',
-      month: 'long',
+      month: 'short',
       day: 'numeric'
     };
   
