@@ -6,7 +6,7 @@ import { replaceHtmlEntities } from "../../scripts/utils";
 const { node } = Astro.props;
 
 //console.log("test" + node.content);
-console.log(node.seo);
+//console.log(node.seo);
 
 var postId = node.databaseId;
 
@@ -88,6 +88,12 @@ var postId = node.databaseId;
     </div>
   </div>
 </div>
+
+<style>
+  img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
+    margin-bottom: 20px;
+  }
+</style>
 
 <script define:vars={{ postId }}>
   document.addEventListener("DOMContentLoaded", function () {

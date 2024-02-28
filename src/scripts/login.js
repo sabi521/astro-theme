@@ -24,7 +24,7 @@ deleteCookie("l_i"); */
 // Function to check cookies and update CSS
 function checkCookiesAndUpdateCSS() {
     //console.log("hello");
-    console.log("Cookies:", document.cookie); // Log all cookies to check their names and values
+    //console.log("Cookies:", document.cookie); // Log all cookies to check their names and values
     if (document.cookie.split(";").some((item) => item.trim().startsWith("l_i="))) {
         //console.log("second hello"); // Log if the condition is met
         
