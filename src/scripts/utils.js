@@ -10,6 +10,12 @@ export function slugify(text) {
   }
   
 
+  
+  export function replaceHtmlEntities(text) {
+        return text.replace(/&#8217;/, "'");
+    }
+
+
 
 
   export function formatDate(inputDateString) {

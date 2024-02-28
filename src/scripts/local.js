@@ -172,6 +172,12 @@ const swiper2 = new Swiper('.swiper2', {
         spaceBetween: 20
       }
     },
+
+    on: {
+      init: function() {
+        checkArrow();
+      }
+    },
   
     // Navigation arrows
     navigation: {
@@ -234,6 +240,36 @@ const swiper2 = new Swiper('.swiper2', {
       clickable: true
     }
   });
+  
+
+  function checkArrow() {
+    // Get all swiper4 elements
+    var swiper4Elements = document.querySelectorAll('.swiper4');
+
+    // Iterate over each swiper4 element
+    swiper4Elements.forEach(function(element) {
+        // Get navigation arrows within the current swiper4 element
+        var swiperPrev = element.querySelector('.swiper-button-prev');
+        var swiperNext = element.querySelector('.swiper-button-next');
+
+        // Hide navigation arrows initially
+        swiperPrev.style.display = 'none';
+        swiperNext.style.display = 'none';
+
+        // Add event listeners for mouseover and mouseout on the swiper4 element
+        element.addEventListener('mouseover', function() {
+            swiperPrev.style.display = 'flex';
+            swiperNext.style.display = 'flex';
+        });
+
+        element.addEventListener('mouseout', function() {
+            swiperPrev.style.display = 'none';
+            swiperNext.style.display = 'none';
+        });
+    });
+}
+
+
 });
 
   

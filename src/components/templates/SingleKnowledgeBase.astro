@@ -2,10 +2,11 @@
 import CasinoGuideSidebar from "../CasinoGuideSidebar.astro";
 import SearchWidget from "../SearchWidget.astro";
 import { formatDate } from "../../scripts/utils";
+import { replaceHtmlEntities } from "../../scripts/utils";
 const { node } = Astro.props;
 
-//console.log(node);
-//console.log(node.databaseId);
+//console.log("test" + node.content);
+console.log(node.seo);
 
 var postId = node.databaseId;
 
@@ -49,13 +50,13 @@ var postId = node.databaseId;
                 ><a href={node.seo.breadcrumbs[1].url}
                   >{node.seo.breadcrumbs[1].text}</a
                 ></span
-              > &gt; <span class="" aria-current="page"
+              > &gt; <span aria-current="page"
                 ><a href={node.seo.breadcrumbs[2].url}
                   >{node.seo.breadcrumbs[2].text}</a
                 ></span
               ></span
-            > &gt; <span class="" aria-current="page"
-              ><a href="">{node.seo.breadcrumbs[3].text}</a></span
+            > &gt; <span aria-current="page"
+              ><a href="">{replaceHtmlEntities(node.seo.breadcrumbs[3].text)}</a></span
             >
           </p>
         </div>
