@@ -1665,19 +1665,21 @@ input[type="text"].bpress-search-field {
 }
 
 
- article p a {
+ .single_article a{
     color: #2ea3f2 !important;
   }
 
-  article ul {
+  .single_article ul{
     padding-left: 10px;
 }
 
-  article li {
+.single_article li {
     list-style-type: disc;
     margin-left: 10px;
   }
 
-
+  .single_article p{
+    font-size: 20px;
+  }
   
 
