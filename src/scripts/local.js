@@ -184,7 +184,7 @@ const swiper2 = new Swiper('.swiper2', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     }
-  })
+  });
 
   const swiper5 = new Swiper('.swiper5', {
     // Optional parameters
@@ -224,7 +224,7 @@ const swiper2 = new Swiper('.swiper2', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     }
-  })
+  });
 
   const swiper6 = new Swiper('.swiper6', {
     // Optional parameters
@@ -252,22 +252,26 @@ const swiper2 = new Swiper('.swiper2', {
         var swiperPrev = element.querySelector('.swiper-button-prev');
         var swiperNext = element.querySelector('.swiper-button-next');
 
-        // Hide navigation arrows initially
-        swiperPrev.style.display = 'none';
-        swiperNext.style.display = 'none';
-
-        // Add event listeners for mouseover and mouseout on the swiper4 element
-        element.addEventListener('mouseover', function() {
-            swiperPrev.style.display = 'flex';
-            swiperNext.style.display = 'flex';
-        });
-
-        element.addEventListener('mouseout', function() {
+        // Check if both previous and next buttons exist
+        if (swiperPrev && swiperNext) {
+            // Hide navigation arrows initially
             swiperPrev.style.display = 'none';
             swiperNext.style.display = 'none';
-        });
+
+            // Add event listeners for mouseover and mouseout on the swiper4 element
+            element.addEventListener('mouseover', function() {
+                swiperPrev.style.display = 'flex';
+                swiperNext.style.display = 'flex';
+            });
+
+            element.addEventListener('mouseout', function() {
+                swiperPrev.style.display = 'none';
+                swiperNext.style.display = 'none';
+            });
+        }
     });
 }
+
 
 
 });
