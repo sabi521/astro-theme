@@ -11,6 +11,8 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   integrations: [tailwind()],
   output: 'server',
+  base: '/the-beach',
+  
   /* adapter: node({
     mode: 'standalone',
   }), */
