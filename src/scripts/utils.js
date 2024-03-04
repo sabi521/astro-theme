@@ -9,13 +9,10 @@ export function slugify(text) {
       .replace(/-+$/, '');
   }
   
-
   
   export function replaceHtmlEntities(text) {
         return text.replace(/&#8217;/, "'");
     }
-
-
 
 
   export function formatDate(inputDateString) {

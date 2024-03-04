@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import SidebarArticles from "../SidebarArticles.astro";
 import { wpquery } from "../../data/wordpress";
-import { formatDate } from "../../scripts/utils.js"
+import { formatDate } from "../../scripts/utils.js";
 
 /* const postData = await fetch("https://slotsstg.wpengine.com/graphql", {
   method: "POST",
@@ -96,7 +96,7 @@ const data = await wpquery({
               </p>
               <div class="text-[#2f0536] font-giloryRegular font-semibold">
                 <a
-                  class="font-giloryRegular line-clamp-2"
+                  class="font-giloryRegular line-clamp-2 text-xl"
                   href={post.node.uri}
                   set:html={post.node.excerpt}
                 />
