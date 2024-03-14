@@ -171,34 +171,30 @@ const { demo, play } = extractDemoAndPlay(originalContentValue);
 </script>
 
 <script>
-  // Wait for the entire page to load
-  window.onload = function () {
-    
-    document.addEventListener("DOMContentLoaded", function () {
-      let aggRating = document.querySelector(
-        ".wpcr3_aggregateRating_ratingValue"
-      );
-      let reviewStarsElement = document.getElementById("review_stars");
+  document.addEventListener("DOMContentLoaded", function () {
+    let aggRating = document.querySelector(
+      ".wpcr3_aggregateRating_ratingValue"
+    );
 
-      // Get the element with the class "wpcr3_aggregateRating_reviewCount"
-      let reviewCountElement = document.querySelector(
-        ".wpcr3_aggregateRating_reviewCount"
-      );
+    let reviewStarsElement = document.getElementById("review_stars");
 
-      // Extract the numeric part using a regular expression
-      let numericReviewCount = reviewCountElement
-        ? reviewCountElement.innerHTML.match(/\d+/)
-        : null;
+    // Get the element with the class "wpcr3_aggregateRating_reviewCount"
+    let reviewCountElement = document.querySelector(
+      ".wpcr3_aggregateRating_reviewCount"
+    );
 
-      // Update the element with the ID "rev_count" with the extracted numeric value
-      document.getElementById("rev_count").innerHTML = numericReviewCount
-        ? numericReviewCount[0]
-        : "0";
+    // Extract the numeric part using a regular expression
+    let numericReviewCount = reviewCountElement
+      ? reviewCountElement.innerHTML.match(/\d+/)
+      : null;
 
-      if (aggRating) {
-        reviewStarsElement.innerHTML = aggRating.innerHTML;
-      }
-    });
-  };
+    // Update the element with the ID "rev_count" with the extracted numeric value
+    document.getElementById("rev_count").innerHTML = numericReviewCount
+      ? numericReviewCount[0]
+      : "0";
+
+    if (aggRating) {
+      reviewStarsElement.innerHTML = aggRating.innerHTML;
+    }
+  });
 </script>
-
